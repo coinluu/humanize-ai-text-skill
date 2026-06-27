@@ -290,6 +290,12 @@ humanize-ai-text-skill/
 
 欢迎提交平台规则、内容类型规则、before/after 示例和测试样本。请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
+## 联系方式
+
+如果你想交流这个 Skill 的使用方式、平台规则或中文内容改写场景，可以扫码添加微信联系。
+
+![微信二维码](./assets/wechat-contact-qr.jpg)
+
 ## License｜许可证
 
 MIT License. See [LICENSE](./LICENSE).
