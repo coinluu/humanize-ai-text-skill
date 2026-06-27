@@ -1,53 +1,24 @@
-# Safety Check Prompt
+# 安全检查 Prompt
 
-## Purpose
+## 用途
 
-Detect whether the text involves high-risk fields or claims and set safe handling rules before rewriting.
+改写前识别高风险领域和敏感结论，并设置安全处理规则。
 
-## High-Risk Areas
+## 高风险领域
 
-Check for:
+医疗健康、法律、金融投资、保险、贷款、税务、教育培训、升学考试、求职简历、情感关系、亲子育儿、未成年人、商业收益承诺、本地生活真实案例、安全、应急、工业、交通、食品安全。
 
-- 医疗、健康、疾病、治疗、药品、营养、心理健康
-- 法律、合同、诉讼、合规、责任认定
-- 金融、投资、保险、贷款、收益、税务
-- 教育培训、升学、录取、考试结果
-- 求职简历、职业背书、任职经历、薪资结果
-- 情感关系、婚恋、家庭冲突
-- 亲子育儿、儿童教育、未成年人
-- 商业收益承诺、招商加盟、副业收入
-- 本地生活真实案例、客户评价、到店体验
-- 安全、应急、工业、交通、食品安全
+## 风险等级
 
-## Risk Levels
+- low：无明显敏感结论，可正常改写。
+- medium：可能影响用户决策，需保留限定词，避免更强承诺。
+- high：涉及专业建议、监管结果、健康、法律、金融、教育结果、雇佣证明或安全，必须降低强度。
 
-### low
+## 处理规则
 
-No sensitive claims. Normal rewrite is allowed.
+中高风险内容必须：降低改写强度；保留限定词；不承诺结果；不新增数据或案例；不删除免责声明；不把不确定说成确定；不把一般信息改成专业建议；优先准确清楚而非更强说服。
 
-### medium
-
-Some claims could affect user decisions. Rewrite cautiously, keep limits, avoid stronger promises.
-
-### high
-
-Claims involve professional advice, regulated outcomes, health, law, finance, education results, employment proof, or safety. Lower rewrite intensity and preserve caveats.
-
-## Safety Handling Rules
-
-For medium or high risk:
-
-- Lower rewrite intensity.
-- Preserve necessary qualifiers.
-- Do not promise outcomes.
-- Do not create new data or cases.
-- Do not remove disclaimers.
-- Do not make uncertain claims sound certain.
-- Do not turn general information into professional advice.
-- Prefer clarity over persuasion.
-- Include a risk note when needed.
-
-## Output
+## 输出
 
 ```yaml
 safety_check:
@@ -59,4 +30,3 @@ safety_check:
   safety_instructions: []
   risk_note_needed: true|false
 ```
-

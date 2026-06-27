@@ -1,89 +1,33 @@
-# Output Modes
+# 输出模式
 
-`humanize-ai-text-skill` supports four output modes.
+`humanize-ai-text-skill` 支持四种 `output_mode`。
 
 ## concise
 
-Use when the user wants the rewritten version only.
-
-Output:
-
-```markdown
-{rewritten text}
-```
-
-Best for:
-
-- Fast copy-and-paste usage.
-- Low-risk text.
-- Users who do not need explanation.
+只输出改写文本。适合低风险、用户只想复制结果的场景。
 
 ## standard
 
-Default mode.
-
-Output:
+默认模式，输出：
 
 ```markdown
 ## AI 感诊断
-
 ## 改写策略
-
 ## 真人化改写版
-
 ## 修改说明
-
 ## 风险提示
 ```
 
-Best for:
-
-- Most rewriting tasks.
-- Users who want a useful rewrite plus brief reasoning.
+适合大多数改写任务。
 
 ## full
 
-Detailed mode.
+详细模式，包含 AI 感诊断、Protected Facts、改写策略、改写版、备用版本、修改说明、事实一致性检查、风险提示和可发布评分。
 
-Output includes:
-
-- AI-tone diagnosis.
-- Protected facts.
-- Rewrite strategy.
-- Rewritten version.
-- Alternate version when useful.
-- Change notes.
-- Factual consistency check.
-- Risk notes.
-- Publish-readiness score.
-
-Best for:
-
-- Complex text.
-- High-risk content.
-- Sample-guided rewriting.
-- Review workflows.
+适合复杂文本、高风险内容、参考样本任务和审核场景。
 
 ## debug
 
-Inspection mode.
+调试模式，包含解析输入、内容类型、Protected Facts、安全检查、AI 感诊断、强度决策、平台适配、样本提炼、改写结果和事实核对。
 
-Output includes:
-
-- Parsed input.
-- Content type decision.
-- Protected facts.
-- Safety check.
-- AI-tone diagnosis.
-- Rewrite intensity decision.
-- Platform adaptation.
-- Sample style extraction.
-- Rewrite result.
-- Factual consistency check.
-
-Best for:
-
-- Testing the skill.
-- Updating prompts or rules.
-- Auditing behavior.
-
+适合测试 Skill、更新 Prompt 或审计行为。

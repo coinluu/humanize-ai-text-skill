@@ -1,134 +1,61 @@
-# Contributing
+# 贡献指南
 
-Thanks for helping improve `humanize-ai-text-skill`. This project is an Agent-ready skill for humanizing AI-generated Chinese text while preserving facts, platform fit, and safety boundaries.
+感谢你改进 `humanize-ai-text-skill`。这是一个面向中文用户的 Agent Skill，用于中文 AI 初稿真人化编辑、平台适配、保留事实和安全检查。
 
-## How to Submit Issues
+## 如何提交 Issue
 
-Open an issue when you find:
+当你发现 Prompt 指令不清楚、规则过宽或过窄、示例新增了未提供事实、测试不匹配、文档难懂时，请提交 Issue。
 
-- A prompt module that gives unclear execution guidance.
-- A rule that is too broad, too narrow, or unsafe.
-- A before/after example that adds unsupported facts.
-- A test case that does not match the skill behavior.
-- Documentation that is confusing or incomplete.
+请包含：涉及文件、输入文本或测试 Prompt、预期行为、实际行为、安全或事实一致性风险。
 
-Please include:
+## 如何提出新平台规则
 
-- The file or module involved.
-- The input text or test prompt.
-- The expected behavior.
-- The actual behavior or concern.
-- Any safety or factual-consistency risk.
+平台规则位于 `rules/platform_rules.md`，并反映在 `prompts/platform_adaptation.md`。
 
-## How to Propose New Platform Rules
+建议包含：平台名称、语言目标、段落规则、语气规则、开头结尾规则、推荐表达、避免表达、一个 before/after 示例。
 
-Platform rules live in `rules/platform_rules.md` and are reflected in `prompts/platform_adaptation.md`.
+不要提交依赖虚假体验、夸大结果或误导性表达的平台规则。
 
-A good platform rule proposal should include:
+## 如何提出新内容类型规则
 
-- Platform name or communication channel.
-- Language goal.
-- Paragraph rules.
-- Tone rules.
-- Opening and ending rules.
-- Recommended expressions.
-- Expressions to avoid.
-- One realistic before/after example.
+内容类型规则位于 `rules/content_type_rules.md`，并由 `prompts/content_type_router.md` 路由。
 
-Do not propose platform rules that depend on fake personal experience, exaggerated results, or misleading claims.
+请说明：内容类型名称、判断特征、改写重点、推荐改写强度、安全注意事项、示例输入和预期改写方向。
 
-## How to Propose New Content Type Rules
+## 如何添加 before/after 示例
 
-Content type rules live in `rules/content_type_rules.md` and are routed by `prompts/content_type_router.md`.
+示例放在 `examples/`。
 
-Include:
+每个示例应包含：场景、输入信息、Before、AI 感诊断、改写策略、After、修改说明、风险提示。
 
-- Content type name.
-- Judgment features.
-- Rewrite priorities.
-- Recommended rewrite intensity.
-- Safety notes.
-- Example input and expected rewrite direction.
+示例不得虚构真实客户、收入结果、医疗/法律/金融结果或个人经历。
 
-## How to Add Before/After Examples
+## 如何添加测试
 
-Examples live in `examples/`.
+测试放在 `tests/`。
 
-Each example should include:
+每个测试文件应包含：测试目标、测试输入、预期行为、通过标准。测试要同时覆盖质量和安全。
 
-- Scenario.
-- Input metadata.
-- `Before`.
-- AI-tone diagnosis.
-- Rewrite strategy.
-- `After`.
-- Change notes.
-- Risk note.
+## Pull Request 流程
 
-Examples must not invent real customers, income results, medical/legal/financial outcomes, or personal experience.
+1. 保持改动聚焦。
+2. 行为变化时，同步更新 prompts、rules、examples 和 tests。
+3. 提交前扫描敏感表达和旧命名。
+4. 在 PR 中说明行为变化。
+5. 为新增规则补充测试。
+6. 不得移除安全边界来增强说服力。
 
-## How to Add Tests
+## 文档风格
 
-Tests live in `tests/`.
+- 中文为主。
+- 必要英文术语保持原样，例如 Agent、Skill、GitHub、README、LICENSE。
+- 保留枚举值和模式名，例如 `basic_humanize`、`platform_humanize`、`sample_guided_humanize`。
+- 写可执行规则，不写空泛说明。
 
-Each test file should include:
+## 安全边界
 
-- Test objective.
-- Test inputs.
-- Expected behavior.
-- Pass criteria.
+所有贡献必须遵守：不虚构事实、数据、案例、个人经历或背书；高风险内容降低改写强度；改写前抽取 Protected Facts，改写后核对。
 
-Tests should cover both quality and safety. Prefer realistic prompts that a user might actually send.
+## 参考样本风格提炼规则
 
-## Pull Request Process
-
-1. Keep changes scoped to one topic.
-2. Update related prompts, rules, examples, and tests together when behavior changes.
-3. Run a consistency scan for sensitive wording and outdated names.
-4. Explain the behavior change in the PR description.
-5. Add or update tests for new rules.
-6. Do not remove safety boundaries to make text more persuasive.
-
-## Documentation Style
-
-- Use clear English.
-- Keep Chinese examples when they clarify Chinese rewrite behavior.
-- Prefer executable guidance over abstract explanation.
-- Use consistent names: `basic_humanize`, `platform_humanize`, `sample_guided_humanize`.
-- Use consistent file names: `sample_style_analysis`, `sample_style_extraction`, `sample_style_rules`.
-
-## Safety Boundaries
-
-All contributions must preserve:
-
-- No fabricated facts.
-- No fabricated data.
-- No fabricated cases.
-- No fabricated personal experience.
-- No fabricated authority or endorsement.
-- Lower rewrite intensity for high-risk domains.
-- Protected facts must be extracted before rewriting and checked after rewriting.
-
-## Reference Sample Style Extraction Rules
-
-Reference samples may guide:
-
-- Structure.
-- Rhythm.
-- Tone.
-- Sentence tendency.
-- Viewpoint expression.
-- Content organization.
-
-Reference samples must not provide reusable concrete content:
-
-- Specific stories.
-- Personal experiences.
-- Cases.
-- Unique metaphors.
-- Original sentences.
-- Titles.
-- Strongly identifiable expressions.
-
-The final rewrite must be based on the user's source text, not on reusable sample content.
-
+参考样本只可用于提炼结构、节奏、语气、句式倾向、观点表达方式和内容组织方式。不得迁移具体故事、个人经历、案例、独特比喻、原句、标题或强识别性表达。

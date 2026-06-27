@@ -1,92 +1,37 @@
-# Rewrite Engine Prompt
+# 改写引擎 Prompt
 
-## Purpose
+## 用途
 
-Execute the humanized rewrite using the parsed input, content type, protected facts, safety rules, platform adaptation, rewrite intensity, and optional sample style patterns.
+根据解析结果、内容类型、Protected Facts、安全规则、平台适配、改写强度和参考样本规律，执行真人化改写。
 
-## Inputs
+## 输入
 
-Use:
+使用 `source_text`、`content_type`、`platform_adaptation`、`protected_facts`、`industry_risk`、`ai_tone_diagnosis`、`rewrite_intensity`、`sample_style_patterns`、`must_keep`、`must_avoid`、`allow_hypothetical_scenarios`。
 
-- `source_text`
-- `content_type`
-- `platform_adaptation`
-- `protected_facts`
-- `industry_risk`
-- `ai_tone_diagnosis`
-- `rewrite_intensity`
-- `sample_style_patterns`
-- `must_keep`
-- `must_avoid`
-- `allow_hypothetical_scenarios`
+## 改写规则
 
-## Rewrite Rules
+必须做到：保留原文核心意思；保护 Protected Facts；删除或改写 AI 套话；打散机械结构；增加自然停顿；使用长短句混合；减少抽象大词；在原文支持范围内增强作者判断；按平台和内容类型调整表达；输出干净、可发布文本。
 
-Do:
+不得：虚构个人经历、案例、数据、客户结果、权威背书、认证或结果承诺；夸大产品效果、收入、录取、求职、医疗、法律或投资结果；把假设场景写成真实事件；复用参考样本原句或强识别性表达；使用强行口语、油腻语气、低俗玩笑、夸张情绪、假装熟络或低质营销号表达。
 
-- Preserve the original core meaning.
-- Preserve protected facts exactly.
-- Delete or replace AI-like stock phrases.
-- Break mechanical structure when needed.
-- Add natural pauses and paragraph rhythm.
-- Use a mix of long and short sentences.
-- Replace empty abstract terms with clearer supported expression.
-- Strengthen author judgment when the source supports it.
-- Adjust tone for the target platform and content type.
-- Keep the output clean and publishable.
+## 强度应用
 
-Do not:
+- Level 1：保留结构，只润色。
+- Level 2：调整句式和段落节奏。
+- Level 3：重组结构并增强平台适配。
+- Level 4：应用参考样本的抽象风格规律。
+- Level 5：低风险场景下重建角度和表达。
 
-- Fabricate personal experience.
-- Fabricate cases.
-- Fabricate data.
-- Fabricate customer results.
-- Fabricate authority, certification, endorsement, or credentials.
-- Exaggerate product effect, income, admission, hiring, treatment, legal, or investment outcomes.
-- Turn hypothetical scenarios into real events.
-- Copy reference sample sentences or unique expressions.
-- Over-humanize the text with forced slang, oily tone, vulgar jokes, exaggerated emotion, fake familiarity, or low-quality marketing-account language.
+## 防过度真人化检查
 
-## Intensity Application
+最终输出前移除：不适配的“姐妹们”“说真的”“我真的服了”；商务/专业内容中过度口语表达；标题党式夸张；假情绪、假亲密；过度吐槽或表演式真人感。
 
-- Level 1: Keep structure; polish wording.
-- Level 2: Rewrite sentence flow and paragraph rhythm.
-- Level 3: Reorganize and make stronger platform fit.
-- Level 4: Apply abstract sample patterns without reusing content.
-- Level 5: Rebuild angle and expression, but keep the same factual base.
-
-## Platform and Content Application
-
-- For social content, improve scannability and naturalness.
-- For scripts, make it speakable.
-- For business writing, preserve hierarchy and precision.
-- For resumes, keep truthfulness and avoid invented metrics.
-- For sales copy, improve value clarity without unsupported proof.
-- For knowledge explanations, improve clarity without oversimplifying important caveats.
-
-## Anti-Overhumanization Check
-
-Before finalizing the rewrite, remove:
-
-- Forced phrases such as "姐妹们", "说真的", "我真的服了" when they do not fit the scene.
-- Overly casual wording in business, legal, medical, financial, resume, or professional content.
-- Clickbait-style exaggeration.
-- Fake personal emotion or fake closeness.
-- Excessive complaints, teasing, or performative human tone.
-
-The final rewrite should be natural, restrained, and scene-appropriate.
-
-## Output
-
-Return:
+## 输出
 
 ```yaml
 rewrite_result:
   rewritten_text: ""
-  major_changes:
-    - ""
-  preserved_facts:
-    - ""
-  notes_for_checker:
-    - ""
+  major_changes: []
+  preserved_facts: []
+  notes_for_checker: []
 ```

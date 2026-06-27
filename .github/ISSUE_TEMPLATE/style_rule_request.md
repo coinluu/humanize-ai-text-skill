@@ -1,38 +1,38 @@
 ---
 name: Style rule request
-about: Propose a platform, content type, or tone rule
+about: 提议平台、内容类型或语气规则
 title: "[Style Rule]: "
 labels: style-rule
 assignees: ""
 ---
 
-## Rule Type
+## 规则类型
 
-- [ ] Platform rule
-- [ ] Content type rule
-- [ ] AI phrase rule
-- [ ] AI structure rule
-- [ ] Human style rule
-- [ ] Anti-overhumanization rule
-- [ ] Reference sample rule
+- [ ] 平台规则
+- [ ] 内容类型规则
+- [ ] AI 短语规则
+- [ ] AI 结构规则
+- [ ] 真人表达规则
+- [ ] 防过度真人化规则
+- [ ] 参考样本规则
 
-## Proposed Rule
+## 规则内容
 
-Describe the rule clearly.
+请清楚描述规则。
 
-## Applicable Scenario
+## 适用场景
 
-Where should this rule apply?
+这个规则适用于哪里？
 
-## Recommended Expression
+## 推荐表达
 
-Give examples of better wording or structure.
+请给出更好的表达或结构示例。
 
-## Expressions to Avoid
+## 避免表达
 
-List expressions, structures, or tones to avoid.
+请列出需要避免的表达、结构或语气。
 
-## Before/After Example
+## Before/After 示例
 
 Before:
 
@@ -46,7 +46,6 @@ After:
 
 ```
 
-## Safety Notes
+## 安全说明
 
-Explain how this rule avoids fabricated facts, unsupported claims, and unsafe persuasion.
-
+请说明该规则如何避免虚构事实、无依据声明和不安全说服。

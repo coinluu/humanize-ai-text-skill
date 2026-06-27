@@ -1,37 +1,16 @@
 # Protected Facts
 
-Protected Facts are facts that must remain stable during rewriting.
+Protected Facts 是改写过程中必须保持稳定的信息。
 
-## What Counts as Protected Facts
+## 包括什么
 
-- Numbers.
-- Dates.
-- Names.
-- Company names.
-- Product names.
-- Places.
-- Prices.
-- Contract terms.
-- Professional terms.
-- Quotes.
-- User-stated facts.
-- Key claims in high-risk domains.
-- Qualifiers and disclaimers.
+数字、日期、名称、公司名、产品名、地名、价格、合同条款、专业术语、引用语、用户明确给出的事实、高风险关键结论、限定词和免责声明。
 
-## Why Protect Them
+## 为什么要保护
 
-Humanized rewriting can accidentally change meaning. Protected facts prevent:
+真人化改写可能造成价格漂移、日期漂移、产品名变化、条件丢失、结论强化，或把假设场景写成真实案例。Protected Facts 用来防止这些问题。
 
-- Price drift.
-- Date drift.
-- Changed product names.
-- Removed contract conditions.
-- Stronger claims than the source supports.
-- Hypothetical examples becoming real cases.
-
-## Extract Before Rewriting
-
-Before rewriting, list protected facts:
+## 改写前抽取
 
 ```yaml
 protected_facts:
@@ -43,44 +22,29 @@ protected_facts:
     - 2026 年 7 月 1 日至 7 月 7 日
   price:
     - 199 元
-  conditions:
-    - 仅面向已完成企业认证的新用户
 ```
 
-## Check After Rewriting
-
-After rewriting, compare source and output:
+## 改写后核对
 
 ```yaml
 price:
   source: 199 元
   rewritten: 199 元
   status: unchanged
-date:
-  source: 2026 年 7 月 1 日至 7 月 7 日
-  rewritten: 2026 年 7 月 1 日至 7 月 7 日
-  status: unchanged
 ```
 
-## Example
+## 示例
 
-Source:
-
-```text
-星河科技将在 2026 年 7 月 1 日至 7 月 7 日推出 FlowPilot Pro 限时体验活动，体验价为 199 元。
-```
-
-Safe rewrite:
+安全改写：
 
 ```text
 星河科技将在 2026 年 7 月 1 日至 7 月 7 日开放 FlowPilot Pro 限时体验，体验价为 199 元。
 ```
 
-Unsafe rewrite:
+不安全改写：
 
 ```text
 星河科技将在 7 月推出 FlowPilot Pro 优惠活动，价格不到 200 元。
 ```
 
-The unsafe version changes precision and weakens protected facts.
-
+不安全版本模糊了日期和价格，不符合保真要求。

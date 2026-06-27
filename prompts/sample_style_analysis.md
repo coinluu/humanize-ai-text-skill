@@ -1,87 +1,22 @@
-# Sample Style Analysis Prompt
+# 参考样本风格分析 Prompt
 
-## Purpose
+## 用途
 
-When a reference sample is provided, analyze its reusable style traits before rewriting the user's text.
+当用户提供参考样本时，先分析样本中可复用的通用风格特征，再进行改写。
 
-## Analyze
+## 分析维度
 
-### Opening Method
+- 开头方式：结论、场景、问题、冲突、观察或事实铺垫。
+- 段落节奏：段落长短、推进方式、是否列表化。
+- 句式特点：长短句、口语程度、停顿、转折和强调方式。
+- 语气特点：冷静、锋利、温和、专业、反思、对话感或克制。
+- 观点表达方式：强判断、弱判断、先观察后结论等。
+- 真实感来源：具体观察、自然不确定性、清楚取舍、朴素表达。
+- 结尾方式：结论、建议、开放思考、行动提醒或判断收束。
 
-Identify whether the sample opens with:
+不得复制样本开头、结尾、原句、故事或独特表达。
 
-- A direct conclusion
-- A concrete scene
-- A question
-- A tension or contrast
-- A personal observation
-- A factual setup
-- A concise problem statement
-
-Do not copy the sample opening.
-
-### Paragraph Rhythm
-
-Identify:
-
-- Average paragraph length
-- Whether paragraphs are compact or developed
-- How ideas move from one paragraph to the next
-- Whether the sample uses lists, short turns, or continuous prose
-
-### Sentence Features
-
-Identify:
-
-- Long or short sentence tendency
-- Degree of oral expression
-- Use of pauses, contrast, questions, or emphasis
-- Whether the syntax is simple or layered
-
-### Tone Features
-
-Identify:
-
-- Calm, sharp, warm, professional, reflective, conversational, restrained, or persuasive tone
-- Degree of emotional expression
-- Degree of directness
-
-### Viewpoint Expression
-
-Identify:
-
-- How the sample states opinions
-- Whether it uses strong judgment or cautious framing
-- How it balances observation and conclusion
-
-### Source of Realness
-
-Identify general methods that create realness:
-
-- Specific observation style
-- Natural uncertainty
-- Clear judgment
-- Scene-level detail
-- Plain wording
-- Imperfect but controlled rhythm
-
-Do not transfer any specific personal story, case, or unique detail.
-
-### Ending Method
-
-Identify whether the sample ends with:
-
-- A concise conclusion
-- A practical suggestion
-- An open thought
-- A call to action
-- A summary of the main judgment
-
-### Reusable Expression Patterns
-
-List only general patterns that can guide the rewrite.
-
-## Output
+## 输出
 
 ```yaml
 sample_style_analysis:
@@ -95,4 +30,3 @@ sample_style_analysis:
   reusable_expression_patterns: []
   non_transferable_elements_detected: []
 ```
-

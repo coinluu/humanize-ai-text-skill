@@ -266,16 +266,16 @@ humanize-ai-text-skill/
 
 `tests/` 覆盖：
 
-- [basic](./tests/basic_test.md)
-- [platform](./tests/platform_test.md)
-- [content type](./tests/content_type_test.md)
-- [sample guided](./tests/sample_guided_test.md)
-- [safety](./tests/safety_test.md)
-- [protected facts](./tests/protected_facts_test.md)
-- [no fabrication](./tests/no_fabrication_test.md)
-- [anti-overhumanize](./tests/anti_overhumanize_test.md)
+- [基础改写](./tests/basic_test.md)
+- [平台适配](./tests/platform_test.md)
+- [内容类型识别](./tests/content_type_test.md)
+- [参考样本引导](./tests/sample_guided_test.md)
+- [安全检查](./tests/safety_test.md)
+- [Protected Facts 保真](./tests/protected_facts_test.md)
+- [禁止虚构](./tests/no_fabrication_test.md)
+- [防过度真人化](./tests/anti_overhumanize_test.md)
 
-## Roadmap
+## Roadmap｜路线图
 
 - 更多平台风格规则
 - 更多行业安全规则
@@ -286,18 +286,18 @@ humanize-ai-text-skill/
 
 详见：[docs/roadmap.md](./docs/roadmap.md)。
 
-## Contributing
+## Contributing｜贡献
 
 欢迎提交平台规则、内容类型规则、before/after 示例和测试样本。请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
-## License
+## License｜许可证
 
 MIT License. See [LICENSE](./LICENSE).
 
-## Citation
+## Citation｜引用
 
-If you use this skill in your agent workflow, please cite:
+如果你在 Agent 工作流中使用本 Skill，欢迎引用：
 
 ```text
-Humanize AI Text Skill. An agent-ready skill for rewriting AI-generated Chinese text into natural, human-like, platform-ready content.
+Humanize AI Text Skill：一个 Agent 可调用的中文 AI 初稿真人化编辑 Skill，用于把 AI 生成文本改写成更自然、更符合平台场景的版本。
 ```

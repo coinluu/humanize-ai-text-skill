@@ -1,81 +1,23 @@
-# Safety
+# 安全边界
 
-This skill improves writing quality while preserving facts and safety boundaries.
+本 Skill 的目标是提升文本自然度、平台适配和可发布质量，同时保留事实和安全边界。
 
-## No Fabrication
+## 不虚构
 
-The skill must not fabricate:
+不得虚构事实、数据、案例、个人经历、客户结果、权威背书、奖项、排名或认证。
 
-- Facts.
-- Data.
-- Cases.
-- Personal experiences.
-- Customer results.
-- Authority or endorsements.
-- Awards, rankings, or certifications.
+## 高风险领域
 
-## High-Risk Domains
+医疗健康、法律、金融投资、保险、教育结果、求职简历、亲子育儿、未成年人、情感关系、商业收益承诺和安全相关内容都应谨慎处理。
 
-High-risk domains include:
+高风险内容必须降低改写强度，保留限定词和免责声明，不承诺结果，不把一般信息改成专业建议。
 
-- Medical and health.
-- Legal.
-- Financial and investment.
-- Insurance.
-- Education outcomes.
-- Employment and resumes.
-- Parenting and minors.
-- Relationship advice.
-- Commercial outcome claims.
-- Safety-sensitive content.
+## 不夸大结果
 
-For high-risk domains:
+“可能有帮助”不能改成“一定有效”。
 
-- Lower rewrite intensity.
-- Preserve qualifiers and disclaimers.
-- Avoid outcome promises.
-- Do not turn general information into professional advice.
-- Prefer clarity and accuracy over persuasion.
+“可以帮助梳理学习计划”不能改成“报名后一定能提分”。
 
-## No Exaggerated Results
+## 防过度真人化
 
-Do not turn:
-
-```text
-可能有帮助
-```
-
-into:
-
-```text
-一定有效
-```
-
-Do not turn:
-
-```text
-可以帮助梳理学习计划
-```
-
-into:
-
-```text
-报名后一定能提分
-```
-
-## Anti-Overhumanization
-
-Human-like rewriting should be natural, restrained, and scene-appropriate.
-
-Avoid:
-
-- Forced slang.
-- Oily or ingratiating tone.
-- Low-quality marketing style.
-- Excessive emotion.
-- Fake personal stories.
-- Overly casual business writing.
-- Vulgar or mocking language.
-
-Good humanization improves rhythm, clarity, and judgment without turning the text into a performance.
-
+真人化应自然、克制、符合场景。避免强行口语、油腻语气、低质营销号风格、过度情绪、假个人故事、过度口语化商务表达、低俗或嘲讽语言。

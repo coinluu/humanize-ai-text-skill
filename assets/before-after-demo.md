@@ -1,6 +1,6 @@
 # Before / After Demo
 
-## Demo 1: Generic AI Text
+## 示例 1：通用 AI 文本
 
 Before:
 
@@ -14,7 +14,7 @@ After:
 企业开始关注 AI 工作流，通常不是因为它听起来新，而是因为很多重复工作确实需要被重新处理。
 ```
 
-## Demo 2: Xiaohongshu Style
+## 示例 2：小红书表达
 
 Before:
 
@@ -30,7 +30,7 @@ After:
 它的重点不是让你一下子变得很高效，而是把零散内容先收拢起来，后面查找和整理会轻一点。
 ```
 
-## Demo 3: Business Document
+## 示例 3：商务文档
 
 Before:
 
@@ -45,4 +45,3 @@ After:
 
 后续可根据实际使用情况，逐步优化流程配置和协作规则。
 ```
-

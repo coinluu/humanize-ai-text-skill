@@ -1,4 +1,4 @@
-# Business Doc Example
+# 商务文档示例
 
 ## 场景
 
@@ -14,7 +14,7 @@ output_mode: standard
 allow_hypothetical_scenarios: false
 ```
 
-## Before
+## 改写前
 
 ```text
 为了进一步提升团队协作效率，推动项目管理流程实现体系化、标准化和智能化升级，我们建议引入 AI 工作流工具，并通过持续优化机制，全面赋能项目执行过程。
@@ -34,7 +34,7 @@ allow_hypothetical_scenarios: false
 - 将抽象表达改成项目管理中的具体环节。
 - 不加入新的成本、收益或实施结果。
 
-## After
+## 改写后
 
 ```text
 建议引入 AI 工作流工具，用于辅助项目管理中的任务整理、进度同步和问题跟进。

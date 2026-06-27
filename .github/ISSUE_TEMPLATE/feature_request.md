@@ -1,24 +1,24 @@
 ---
 name: Feature request
-about: Suggest a new mode, rule, platform, content type, or documentation improvement
+about: 建议新模式、规则、平台、内容类型或文档改进
 title: "[Feature]: "
 labels: enhancement
 assignees: ""
 ---
 
-## Summary
+## 摘要
 
-Describe the proposed improvement.
+请描述你希望增加或改进什么。
 
-## Use Case
+## 使用场景
 
-What user request or workflow would this improve?
+这个改进服务于什么用户请求或工作流？
 
-## Proposed Behavior
+## 预期行为
 
-Describe how the skill should behave.
+请描述 Skill 应该如何处理。
 
-## Affected Files
+## 影响文件
 
 - [ ] prompts
 - [ ] rules
@@ -27,19 +27,12 @@ Describe how the skill should behave.
 - [ ] docs
 - [ ] README
 
-## Safety Considerations
+## 安全考虑
 
-Explain how the feature preserves:
+请说明如何保留：不虚构、Protected Facts、高风险谨慎、参考样本边界、防过度真人化。
 
-- No fabrication.
-- Protected facts.
-- High-risk domain caution.
-- Reference sample boundaries.
-- Anti-overhumanization.
-
-## Example Prompt
+## 示例 Prompt
 
 ```text
-Paste a realistic prompt here.
+请粘贴一个真实可能出现的 Prompt。
 ```
-

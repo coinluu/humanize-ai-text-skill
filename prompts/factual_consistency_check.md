@@ -1,41 +1,20 @@
-# Factual Consistency Check Prompt
+# 事实一致性检查 Prompt
 
-## Purpose
+## 用途
 
-After rewriting, compare the rewritten text against the source text and protected facts. Automatically correct factual drift.
+改写后对照原文和 Protected Facts，检查并自动修正事实漂移。
 
-## Check Items
+## 检查项
 
-Verify:
+数字、日期、时间、名称、公司名、产品名、地名、价格、引用语、条件、合同条款、专业术语、高风险结论、限定词、免责声明、核心意思和结论。
 
-- Numbers are unchanged.
-- Dates and times are unchanged.
-- Names, company names, product names, and places are unchanged.
-- Prices, quotes, conditions, and contract terms are unchanged.
-- Professional terms and high-risk conclusions are preserved.
-- Necessary qualifiers and disclaimers remain.
-- The core meaning and conclusion did not shift.
-- No unsupported fact was added.
-- No unsupported data was added.
-- No unsupported case, customer result, or personal experience was added.
-- No hypothetical scenario was written as a real case.
-- No reference sample content was imported as source fact.
+同时检查是否新增未经用户提供的事实、数据、案例、客户结果、个人经历；是否把假设场景写成真实案例；是否把参考样本内容当成事实。
 
-## Correction Rules
+## 修正规则
 
-If any issue is found:
+发现问题时：指出漂移，立即修正，再重新检查。用户明确允许假设场景时，也必须标注为假设，不得写成真实经历或证据。
 
-1. Identify the drift.
-2. Revise the rewritten text immediately.
-3. Re-run the check.
-4. Keep the corrected version as final.
-
-If a user explicitly allowed hypothetical scenarios:
-
-- Mark them clearly as hypothetical.
-- Do not present them as real experience or proof.
-
-## Output
+## 输出
 
 ```yaml
 factual_consistency_check:
@@ -48,4 +27,3 @@ factual_consistency_check:
   corrected_rewrite: ""
   final_passed: true|false
 ```
-

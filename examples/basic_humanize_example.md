@@ -1,4 +1,4 @@
-# Basic Humanize Example
+# 普通去 AI 味示例
 
 ## 场景
 
@@ -15,7 +15,7 @@ platform: generic_text
 allow_hypothetical_scenarios: false
 ```
 
-## Before
+## 改写前
 
 ```text
 在当今 AI 快速发展的时代，越来越多企业开始关注 AI 工作流。AI 工作流不仅能够帮助企业提升效率，而且能够优化业务流程，推动企业实现智能化升级。因此，企业应该积极拥抱 AI 工作流，以便在未来竞争中获得更大的发展空间。
@@ -35,7 +35,7 @@ allow_hypothetical_scenarios: false
 - 保留"效率、流程、竞争"这些核心意思，但降低口号感。
 - 使用长短句混合，让节奏更自然。
 
-## After
+## 改写后
 
 ```text
 企业开始关注 AI 工作流，通常不是因为它听起来新，而是因为很多重复工作确实需要被重新处理。

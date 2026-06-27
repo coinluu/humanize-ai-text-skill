@@ -1,4 +1,4 @@
-# WeChat Article Example
+# 公众号文章示例
 
 ## 场景
 
@@ -15,7 +15,7 @@ output_mode: standard
 allow_hypothetical_scenarios: true
 ```
 
-## Before
+## 改写前
 
 ```text
 随着 AI 技术的不断发展，内容创作者需要不断提升自己的 AI 使用能力。AI 不仅可以帮助创作者提升效率，还可以帮助创作者打开新的内容生产方式。因此，掌握 AI 已经成为内容创作者实现长期发展的重要抓手。
@@ -35,7 +35,7 @@ allow_hypothetical_scenarios: true
 - 保持公众号文章的克制和解释力。
 - 避免把 AI 写成万能答案。
 
-## After
+## 改写后
 
 ```text
 内容创作者学习 AI，不是为了把自己变成一个只会点按钮的人。

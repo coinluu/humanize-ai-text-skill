@@ -1,4 +1,4 @@
-# Content Type Rules
+# content_type 规则
 
 ## 规则说明
 
@@ -253,19 +253,19 @@
 
 ## 示例
 
-Source:
+原文：
 
 ```text
 我们需要提升沟通效率，减少项目推进中的信息差。
 ```
 
-As `business_doc`:
+按 `business_doc` 改写：
 
 ```text
 建议优化项目沟通流程，重点减少任务分配、进度同步和问题反馈中的信息差，提升协作效率。
 ```
 
-As `short_video_script`:
+按 `short_video_script` 改写：
 
 ```text
 项目推进慢，很多时候不是大家不努力，而是信息没对齐。谁负责、进展到哪、卡在哪里，如果这些都不清楚，沟通成本就会越来越高。

@@ -1,4 +1,4 @@
-# Content Type Test
+# 内容类型测试
 
 ## 测试目标
 

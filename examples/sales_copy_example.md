@@ -1,4 +1,4 @@
-# Sales Copy Example
+# 销售文案示例
 
 ## 场景
 
@@ -15,7 +15,7 @@ output_mode: standard
 allow_hypothetical_scenarios: true
 ```
 
-## Before
+## 改写前
 
 ```text
 我们的 AI 工作流咨询服务可以全面提升企业效率，帮助企业快速实现智能化升级。如果你想抓住 AI 红利，请立即预约咨询，避免错过行业机会。
@@ -35,7 +35,7 @@ allow_hypothetical_scenarios: true
 - 删除结果承诺和焦虑式 CTA。
 - 保留咨询服务与 AI 工作流主题。
 
-## After
+## 改写后
 
 ```text
 如果你的团队已经在尝试 AI 工具，但流程还是比较散，我们可以帮你一起梳理 AI 工作流。

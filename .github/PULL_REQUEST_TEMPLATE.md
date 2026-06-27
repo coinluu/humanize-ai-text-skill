@@ -1,43 +1,42 @@
 # Pull Request
 
-## Summary
+## 摘要
 
-Describe the change and why it is needed.
+请说明本次改动和原因。
 
-## Change Type
+## 改动类型
 
-- [ ] Prompt update
-- [ ] Rule update
-- [ ] Example update
-- [ ] Test update
-- [ ] Documentation update
-- [ ] Open-source packaging
+- [ ] Prompt 更新
+- [ ] Rule 更新
+- [ ] Example 更新
+- [ ] Test 更新
+- [ ] 文档更新
+- [ ] 开源包装
 
-## Files Changed
+## 修改文件
 
-List the main files changed.
+请列出主要修改文件。
 
-## Behavior Impact
+## 行为影响
 
-Explain how Agent behavior changes.
+请说明 Agent 行为会如何变化。
 
-## Safety Checklist
+## 安全检查
 
-- [ ] Does not fabricate facts, data, cases, personal experience, or authority.
-- [ ] Preserves Protected Facts before and after rewriting.
-- [ ] Keeps high-risk domains cautious and accurate.
-- [ ] Keeps reference sample usage limited to general expression patterns.
-- [ ] Avoids forced slang, oily tone, vulgarity, and low-quality marketing style.
-- [ ] Does not remove necessary disclaimers or qualifiers.
+- [ ] 不虚构事实、数据、案例、个人经历或背书。
+- [ ] 改写前后保留 Protected Facts。
+- [ ] 高风险内容保持谨慎和准确。
+- [ ] 参考样本只用于通用表达规律。
+- [ ] 避免强行口语、油腻、低俗和低质营销号表达。
+- [ ] 不删除必要免责声明或限定词。
 
-## Tests
+## 测试
 
-Describe the tests or manual checks performed.
+请说明执行了哪些测试或人工检查。
 
-## Documentation
+## 文档
 
-- [ ] README updated if usage changed.
-- [ ] docs updated if behavior changed.
-- [ ] examples updated if new behavior was added.
-- [ ] tests updated if rules changed.
-
+- [ ] 行为变化已更新 README。
+- [ ] 行为变化已更新 docs。
+- [ ] 新行为已补 examples。
+- [ ] 规则变化已补 tests。

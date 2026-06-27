@@ -1,46 +1,45 @@
 ---
 name: Bug report
-about: Report incorrect, unsafe, or unclear skill behavior
+about: 报告错误、不安全或不清楚的 Skill 行为
 title: "[Bug]: "
 labels: bug
 assignees: ""
 ---
 
-## Summary
+## 问题摘要
 
-Describe the issue briefly.
+请简要描述问题。
 
-## Affected Area
+## 影响范围
 
-- [ ] README or documentation
+- [ ] README 或 docs
 - [ ] `skill.md`
 - [ ] prompts
 - [ ] rules
 - [ ] examples
 - [ ] tests
-- [ ] safety behavior
-- [ ] protected facts behavior
-- [ ] reference sample style extraction
+- [ ] 安全行为
+- [ ] Protected Facts 行为
+- [ ] 参考样本风格提炼
 
-## Input Prompt or Example
+## 输入 Prompt 或示例
 
 ```text
-Paste the user prompt or test input here.
+请粘贴用户 Prompt 或测试输入。
 ```
 
-## Expected Behavior
+## 预期行为
 
-Describe what should happen.
+请描述应该发生什么。
 
-## Actual Behavior
+## 实际行为
 
-Describe what happened instead.
+请描述实际发生了什么。
 
-## Safety or Factual Risk
+## 安全或事实风险
 
-Explain whether the issue adds unsupported facts, changes protected facts, weakens safety boundaries, or over-humanizes the text.
+是否新增了未提供事实、改变了 Protected Facts、削弱了安全边界，或出现过度真人化？
 
-## Suggested Fix
+## 修复建议
 
-Optional: suggest the file or rule that should change.
-
+可选：建议需要修改的文件或规则。

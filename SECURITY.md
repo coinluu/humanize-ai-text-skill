@@ -1,58 +1,23 @@
-# Security and Responsible Use
+# 安全与负责任使用
 
-`humanize-ai-text-skill` is designed for responsible text editing. It improves naturalness, clarity, platform fit, and publish readiness while preserving facts and safety boundaries.
+`humanize-ai-text-skill` 用于负责任的中文文本编辑：提升自然度、清晰度、平台适配和可发布质量，同时保留事实和安全边界。
 
-## Responsible Use
+## 负责任使用
 
-Use this skill to:
+适合用于：AI 初稿自然化、平台适配、Protected Facts 保真、高风险内容谨慎改写、参考样本风格提炼。
 
-- Make AI-generated Chinese drafts more natural and readable.
-- Adapt text for appropriate platforms and content types.
-- Preserve protected facts and user intent.
-- Improve clarity in business, educational, social, and editorial contexts.
-- Add safety notes when high-risk claims are present.
+## 不支持的用法
 
-## Unsupported Use Cases
-
-Do not use this project to:
-
-- Fabricate facts, data, customer cases, personal experiences, or authority.
-- Misrepresent the source or ownership of content.
-- Remove necessary disclaimers or risk warnings.
-- Convert uncertain claims into guaranteed outcomes.
-- Produce misleading medical, legal, financial, education, employment, or safety-sensitive claims.
-- Reuse reference sample-specific stories, original lines, titles, or strongly identifiable expressions.
+不得用于虚构事实、数据、客户案例、个人经历或权威背书；不得删除必要免责声明；不得把不确定内容改成结果承诺；不得复用参考样本中的具体故事、原句、标题或强识别性表达。
 
 ## No Fabrication Policy
 
-The skill must not add:
+不得新增用户未提供的人物、组织、客户故事、指标、收入结果、排名、个人经历、认证、奖项、专家背书或机构支持。假设性例子必须明确标注为假设。
 
-- Real people or organizations not supplied by the user.
-- Customer stories or case studies not supplied by the user.
-- Metrics, income claims, performance numbers, or rankings not supplied by the user.
-- Personal experience not supplied by the user.
-- Certifications, awards, expert endorsements, or institutional backing not supplied by the user.
+## 高风险领域边界
 
-Hypothetical examples are allowed only when clearly marked as hypothetical.
+医疗、法律、金融、教育、求职、亲子、安全和商业收益相关内容必须降低改写强度，保留限定词和风险提示，优先准确性和清晰度。
 
-## High-Risk Domain Boundaries
+## 如何报告不安全输出或滥用风险
 
-For medical, legal, financial, education, employment, parenting, relationship, safety, and commercial-outcome content:
-
-- Lower rewrite intensity.
-- Preserve qualifiers and disclaimers.
-- Avoid outcome promises.
-- Do not turn general information into professional advice.
-- Prefer clarity and accuracy over persuasion.
-
-## Reporting Unsafe Output or Misuse Risk
-
-Please open a GitHub issue using the bug report template and include:
-
-- The source prompt or test input.
-- The unsafe or risky output.
-- The expected safer behavior.
-- The affected file, prompt, rule, or example if known.
-
-Do not include private personal information, credentials, medical records, legal documents, or confidential business data in public issues.
-
+请使用 GitHub Issue，并提供：输入 Prompt、风险输出、期望的安全行为、相关文件。不要在公开 Issue 中提交私人信息、证件、医疗记录、法律文件或商业机密。

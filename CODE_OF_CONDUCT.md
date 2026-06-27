@@ -1,29 +1,17 @@
 # Code of Conduct
 
-## Our Standards
+## 社区标准
 
-We aim to keep this project professional, practical, and safety-conscious.
+我们希望本项目保持专业、实用和安全意识。
 
-Positive contributions include:
+欢迎的贡献包括：清晰反馈、有依据的建议、尊重差异的讨论、保留事实和安全边界的改进、真实可用的示例和测试。
 
-- Clear feedback.
-- Evidence-backed suggestions.
-- Respectful disagreement.
-- Improvements that preserve factual accuracy and user safety.
-- Examples and tests that reflect real usage without fabricating claims.
+不接受的行为包括：骚扰、人身攻击、鼓励虚构事实或不安全说服、未经许可分享隐私或机密信息、反复忽视项目安全边界。
 
-Unacceptable behavior includes:
+## 执行方式
 
-- Harassment, insults, or personal attacks.
-- Contributions that encourage fabricated facts, false claims, or unsafe persuasion.
-- Sharing private or confidential information without permission.
-- Repeatedly ignoring project safety boundaries.
+维护者可以编辑、关闭或拒绝违反规范的 Issue 和 Pull Request。严重或重复违反者可能被限制参与。
 
-## Enforcement
+## 报告方式
 
-Maintainers may edit, close, or reject issues and pull requests that violate these standards. Serious or repeated violations may lead to blocking from project participation.
-
-## Reporting
-
-Report conduct concerns through a GitHub issue or by contacting the maintainers privately if contact details are available in the repository.
-
+可通过 GitHub Issue 报告社区行为问题；如仓库提供维护者联系方式，也可私下联系维护者。

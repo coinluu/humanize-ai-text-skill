@@ -1,4 +1,4 @@
-# Sample Style Rules
+# 参考样本风格提炼规则
 
 ## 规则说明
 
@@ -49,19 +49,19 @@
 
 ## 示例
 
-Reference Sample Trait:
+参考样本特征：
 
 ```text
 样本常用短段落，先给判断，再解释为什么。
 ```
 
-Allowed Transfer:
+允许迁移：
 
 ```text
 改写时可以先给出核心判断，再用两三个短段解释原因。
 ```
 
-Forbidden Transfer:
+禁止迁移：
 
 ```text
 直接复用样本中的开头故事、标题、比喻或原句。
@@ -69,19 +69,19 @@ Forbidden Transfer:
 
 ## 正确示例
 
-User Source:
+User 原文：
 
 ```text
 很多人在学习新技能时缺少持续反馈，因此难以坚持。
 ```
 
-Reference Pattern:
+参考规律：
 
 ```text
 短段落；先判断；再解释原因；结尾给出克制建议。
 ```
 
-Rewrite:
+改写：
 
 ```text
 学新技能最难的，往往不是开始，而是坚持到看见反馈之前。

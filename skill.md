@@ -1,18 +1,14 @@
 # Humanize AI Text Skill
 
-## Purpose
+## Purpose｜用途
 
-Use this Skill to rewrite AI-generated or overly mechanical Chinese text into a version that feels more natural, credible, and appropriate for the target platform and content scenario.
+使用本 Skill 将 AI 生成或机器感明显的中文文本，改写成更自然、更可信、更符合目标平台和内容场景的版本。
 
-The Skill must preserve the user's original meaning, protect factual information, avoid fabrication, and produce useful diagnostic notes, rewrite rationale, and risk warnings when needed.
+Skill 必须保留用户原意，保护事实信息，不虚构内容，并在需要时输出诊断、修改说明和风险提示。它是无状态 Agent Skill，不需要数据库、后台服务、用户系统或长期记忆。参考样本只在当前请求中使用，不保存样本、不建立用户画像。
 
-The goal is editing quality: better rhythm, clearer expression, more natural structure, stronger platform fit, and higher publish readiness.
+## When to Use｜什么时候调用
 
-This is a stateless Agent Skill. It does not require a database, backend service, user system, or long-term memory. Reference samples are used only within the current request context. Do not store samples, build user profiles, or carry style preferences across unrelated requests.
-
-## When to Use
-
-Call this Skill when the user asks to:
+当用户提出以下需求时调用本 Skill：
 
 - 去 AI 味
 - 改得更自然
@@ -21,15 +17,13 @@ Call this Skill when the user asks to:
 - 像小红书
 - 像口播
 - 降低模板感、官方感、机器感、营销感
-- 把文本改成小红书、抖音、公众号、知乎、朋友圈、私域社群、销售文案、商务文档等风格
-- 把 AI 初稿改成更适合发布的版本
+- 改成小红书、抖音、公众号、知乎、朋友圈、私域社群、销售文案、商务文档等风格
 - 优化文章、文案、口播稿、标题、评论回复、邮件、简历、商务材料等文本
-- 根据参考样本学习风格并改写用户原文，例如"参考这个样本风格"
-- 在保留事实的前提下改善表达节奏、语气、结构和可读性
+- 根据参考样本学习风格并改写用户原文，例如“参考这个样本风格”
 
-## When Not to Use
+## When Not to Use｜什么时候谨慎调用
 
-Do not use this Skill, or use only to refuse and explain boundaries, when the user asks to:
+遇到以下请求时，应谨慎处理或拒绝不安全部分：
 
 - 伪造事实
 - 虚构经历、案例、数据、客户结果或个人故事
@@ -40,389 +34,143 @@ Do not use this Skill, or use only to refuse and explain boundaries, when the us
 - 删除必要免责声明、限制条件、风险提示或合规表述
 - 把不确定信息改成确定承诺
 
-If the user request contains both allowed and disallowed parts, complete the allowed editing task while explicitly declining the unsafe part.
+如果请求中同时包含安全部分和不安全部分，只拒绝不安全部分，并尽量完成安全的改写任务。
 
-## Stateless Operation
+## Stateless Operation｜无状态运行
 
-- Treat every request independently.
-- Use reference samples only for the current rewrite.
-- Do not save reference samples.
-- Do not infer or maintain a long-term user profile.
-- Do not remember platform preferences beyond the active conversation unless the user repeats them.
-- Do not require or assume any database, backend system, account system, or persistent storage.
-- Keep all style transfer grounded in the current source text, current reference sample, and current user instructions.
+- 每次请求独立处理。
+- 参考样本只用于本次改写。
+- 不保存参考样本。
+- 不维护长期用户画像。
+- 不跨无关请求记住平台偏好。
+- 不依赖数据库、后台系统、账号系统或持久化存储。
 
-## Supported Modes
+## Supported Modes｜支持的调用模式
 
 ### 1. basic_humanize
 
-Use for general naturalization when no target platform or reference sample is required.
+用于普通文本自然化。适合“去 AI 味”“自然一点”“像真人写”等通用需求。
 
-Typical tasks:
-
-- Remove stiff AI wording.
-- Improve sentence rhythm.
-- Reduce generic structure.
-- Make the text clearer and more human without changing substance.
-
-Boundary:
-
-- Do not add examples, data, stories, or stronger claims unless provided by the user.
+边界：不新增案例、数据、经历或更强结论。
 
 ### 2. platform_humanize
 
-Use when the user names a platform, publishing channel, or communication scene.
+用于用户指定平台、渠道或内容场景时，例如小红书、抖音口播、公众号、知乎、朋友圈、私域社群、销售沟通、商务邮件、简历和求职材料。
 
-Supported platform scenes include:
-
-- 小红书
-- 抖音
-- 公众号
-- 知乎
-- 朋友圈
-- 私域社群
-- 销售沟通
-- 商务邮件
-- 简历和求职材料
-
-Typical tasks:
-
-- Adjust density, tone, structure, and phrasing for the platform.
-- Make the text feel native to the channel without relying on stereotypes.
-- Preserve factual accuracy and content purpose.
-
-Boundary:
-
-- Platform fit must not become clickbait, exaggeration, fake experience, or unsupported persuasion.
+边界：平台适配不能变成夸张、虚假体验、低质营销表达或无依据说服。
 
 ### 3. sample_guided_humanize
 
-Use when the user provides one or more reference samples and asks to learn the style.
+用于用户提供参考样本并要求学习风格时。
 
-Typical tasks:
+只迁移通用表达规律，例如结构、节奏、语气、句式倾向、观点表达方式和内容组织方式。不得迁移样本中的具体故事、案例、标题、原句、独特比喻、个人经历或强识别性表达。
 
-- Analyze the sample's structure, rhythm, tone, sentence tendency, argument style, and content organization.
-- Transfer only general expression patterns.
-- Rewrite the user's original text based on the user's own facts and meaning.
+## Supported Content Types｜支持的文本类型
 
-Boundary:
+- `article`：文章、长文、公众号稿。重点优化结构、论证和段落推进。
+- `social_note`：小红书笔记、社交平台内容。重点优化短段落、真实感和扫读性。
+- `short_video_script`：抖音、短视频、直播或口播稿。重点优化短句、停顿和前三秒钩子。
+- `sales_copy`：产品、服务、课程、咨询或活动文案。重点增强可信表达，不夸大结果。
+- `title`：标题、主题行、视频标题。重点清楚、准确、有吸引力但不误导。
+- `caption`：图片、视频或社交配文。重点简短、贴合场景。
+- `comment_reply`：评论、评价、异议或互动回复。重点自然、相关、有边界。
+- `private_message`：私信、私域消息、跟进话术。重点清楚、友好、低压迫感。
+- `email`：邮件和商务沟通。重点礼貌、清楚、行动明确。
+- `resume`：简历、项目经历、求职材料。重点真实、具体、岗位相关。
+- `business_doc`：报告、方案、纪要、计划、SOP。重点准确、克制、可决策。
+- `knowledge_explanation`：知识解释、教程、科普。重点清楚、准确、有逻辑。
+- `generic_text`：通用文本。重点保留原意并提升自然度。
 
-- Do not copy or adapt sample-specific stories, examples, titles, original sentences, unique metaphors, personal experiences, or strongly identifiable expressions.
+## Workflow｜执行工作流
 
-## Supported Content Types
+执行顺序：
 
-- `article`: Long-form article, essay, newsletter, or official account post. Prioritize structure, argument flow, paragraph rhythm, and readable transitions.
-- `social_note`: Social platform note such as Xiaohongshu or community post. Prioritize directness, practical value, natural tone, and scannability.
-- `short_video_script`: Spoken script for short video or livestream. Prioritize speakable rhythm, short sentences, hooks, pacing, and oral clarity.
-- `sales_copy`: Product, service, or offer copy. Prioritize value clarity, audience fit, credible persuasion, and claim discipline.
-- `title`: Headline or title. Prioritize clarity, accuracy, curiosity, and platform fit without clickbait or false claims.
-- `caption`: Image, video, or post caption. Prioritize brevity, context, mood fit, and easy reading.
-- `comment_reply`: Reply to comments, reviews, objections, or social interactions. Prioritize relevance, warmth, boundaries, and concise response.
-- `private_message`: One-to-one message, DM, private domain message, or outreach. Prioritize natural conversational tone and clear intent.
-- `email`: Work or business email. Prioritize clarity, politeness, actionability, and appropriate formality.
-- `resume`: Resume bullet, profile summary, project experience, or cover letter text. Prioritize truthfulness, specificity, role relevance, and no fabricated achievements.
-- `business_doc`: Report, proposal, memo, meeting summary, or business document. Prioritize precision, hierarchy, restraint, and decision usefulness.
-- `knowledge_explanation`: Educational or explanatory content. Prioritize accuracy, plain explanation, examples only when supported, and logical progression.
-- `generic_text`: Any text that does not fit the above categories. Prioritize meaning preservation, natural flow, and factual consistency.
-
-## Workflow
-
-Follow this execution sequence:
-
-1. Parse input
-   - Identify source text, user goal, target platform, content type, audience, constraints, output mode, and rewrite intensity.
-   - If source text is missing, ask the user to provide it.
-   - If other information is missing but the task can proceed, infer conservatively and continue.
-
-2. Determine mode
-   - Use `sample_guided_humanize` when a reference sample is provided or requested.
-   - Use `platform_humanize` when a platform, channel, or content scene is named.
-   - Use `basic_humanize` for general naturalization requests.
-
-3. Detect content type
-   - Select the closest supported content type.
-   - If the user did not specify content type, infer it automatically.
-   - If multiple types apply, choose the primary publishing or usage context.
-
-4. Extract protected facts
-   - List information that must remain unchanged.
-   - Treat uncertain or sensitive claims as protected until clarified.
-
-5. Detect industry risk
-   - Identify whether the text involves medical, legal, financial, education, employment, safety, compliance, or other high-risk claims.
-   - Lower rewrite intensity when accuracy or compliance could be affected.
-
-6. Diagnose AI-like tone
-   - Detect generic openings, formulaic transitions, over-neat structure, vague claims, mechanical contrast, repeated rhythm, and platform mismatch.
-
-7. Select rewrite intensity
-   - Use the user's requested level if safe.
-   - If unspecified, choose automatically based on platform, content type, AI-tone diagnosis, and industry risk.
-   - Otherwise choose the lowest level that solves the writing problem.
-
-8. Apply platform adaptation
-   - Adjust structure, sentence rhythm, vocabulary, density, and directness for the target platform.
-   - If no platform is specified, use `generic_text`.
-   - Avoid platform caricatures.
-
-9. Analyze reference samples if provided
-   - Identify reusable style traits only.
-   - Do not treat sample content as factual material.
-
-10. Extract transferable style patterns if samples are provided
-   - Extract structure, pacing, tone, sentence tendency, viewpoint style, and organization.
-   - Exclude stories, cases, quotes, titles, unique metaphors, and identifiable expressions.
-
-11. Rewrite text
-    - Rebuild expression based on the user's source text and selected constraints.
-    - Keep the rewrite natural, controlled, and publish-ready.
-
-12. Check factual consistency
-    - Compare rewrite against source.
-    - Remove any added fact, changed number, strengthened claim, unsupported example, or altered conclusion.
-
-13. Check anti-overhumanization
-    - Remove forced slang, oily tone, vulgarity, fake emotion, exaggerated marketing language, and inappropriate familiarity.
-
-14. Select output mode
-    - Use the requested output mode.
-    - Default to `standard` if the user does not specify.
-
-15. Return final output
-    - Provide the rewritten version and the required notes.
-    - Include risk warnings only when relevant.
-
-## Output Requirement
-
-- The output must always be usable.
-- Do not output analysis only.
-- Unless the user did not provide source text, always include a rewritten version.
-- If the user asks for diagnosis, provide diagnosis plus the rewrite.
-- If the user requests an unsafe addition, decline that addition and still provide a safe rewrite based on the original text.
-- If source text is missing, ask the user to provide the original text instead of inventing one.
+1. 解析输入：识别原文、目标、平台、内容类型、受众、限制、输出模式和改写强度。缺少原文时要求用户补充；其他信息不足但可执行时，用保守默认值继续。
+2. 判断模式：有参考样本用 `sample_guided_humanize`；有平台/渠道用 `platform_humanize`；普通自然化用 `basic_humanize`。
+3. 识别文本类型：自动选择最接近的 `content_type`。
+4. 抽取 protected_facts：抽取不可改动事实。
+5. 判断行业风险：识别医疗、法律、金融、教育、求职、安全等高风险内容。
+6. 诊断 AI 感：诊断宏大开头、模板结构、抽象词、机械连接词等问题。
+7. 选择改写强度：根据用户要求、平台、内容类型和行业风险选择 Level 1-5。
+8. 执行平台适配：按平台调整段落、语气、开头和结尾；未指定平台时使用 `generic_text`。
+9. 分析参考样本：如有参考样本，只分析可复用风格特征。
+10. 提炼通用表达规律：排除样本具体内容。
+11. 执行改写：基于用户原文执行真人化改写。
+12. 事实一致性检查：核对事实、数字、名称、限定词和结论。
+13. 防过度真人化检查：移除强行口语化、油腻化、低质营销号化表达。
+14. 选择输出模式：未指定时默认 `standard`。
+15. 输出最终结果：必须输出可用改写版，除非用户没有提供原文。
 
 ## Protected Facts
 
-The following information must be protected and preserved unless the user explicitly asks to change it and the change is safe:
+必须保护：数字、日期、人名、公司名、产品名、地名、报价、合同条款、专业术语、引用语、用户明确给出的事实，以及医疗、法律、金融、教育、求职等高风险关键结论。
 
-- 数字
-- 日期
-- 人名
-- 公司名
-- 产品名
-- 地名
-- 报价
-- 合同条款
-- 专业术语
-- 引用语
-- 用户明确给出的事实
-- 医疗、法律、金融、教育、求职等关键结论
+Protected Facts 同时保护“字面值”和“语义边界”。例如“不保证录取”不能改成“大幅提升录取概率”。如事实含糊，保留原文或询问澄清。
 
-Protected facts include both exact values and meaning. For example, changing "不保证录取" into "大幅提升录取概率" is not allowed even if no number changes.
+## Rewrite Intensity Levels｜改写强度
 
-If a fact is ambiguous, preserve the original wording or ask for clarification.
+### Level 1：轻度润色
 
-## Rewrite Intensity Levels
+适合正式、高风险或已经基本可用的文本。只优化措辞、标点和明显套话，结构基本不变。
 
-### Level 1: 轻度润色
+### Level 2：中度自然化
 
-Use for formal, high-risk, or already acceptable text.
+普通 AI 初稿默认强度。可调整句式、段落节奏和连接方式，但不新增事实。
 
-Actions:
+### Level 3：强真人化
 
-- Smooth awkward wording.
-- Remove obvious AI phrases.
-- Improve punctuation and sentence flow.
-- Keep structure mostly unchanged.
+适合文本明显僵硬或平台不适配的情况。可重组段落、优化开头结尾和表达节奏，但不能牺牲准确性。
 
-Boundary:
+### Level 4：参考样本风格迁移
 
-- Do not reorganize arguments or change tone substantially.
+仅在用户提供参考样本时使用。只迁移通用表达规律，不复用样本具体内容。
 
-### Level 2: 中度自然化
+### Level 5：创意重写
 
-Use as the default for ordinary AI drafts.
+仅在用户明确要求大幅重写且内容低风险时使用。可重建角度和表达，但仍不能虚构事实、数据、经历、结果或背书。
 
-Actions:
+## Reference Sample Rules｜参考样本规则
 
-- Adjust sentence length and rhythm.
-- Replace generic wording with clearer supported expression.
-- Improve paragraph transitions.
-- Reduce template-like structure.
+参考样本只能用于提炼：结构、节奏、语气、句式倾向、观点表达方式和内容组织方式。
 
-Boundary:
+以下内容不可迁移：具体故事、个人经历、案例、独特比喻、原句、标题、强识别性表达、人物、品牌、地名、事件和数据。
 
-- Do not add new examples, personal experience, or claims.
+## Safety Rules｜安全边界
 
-### Level 3: 强真人化
+- 不虚构事实。
+- 不虚构数据。
+- 不虚构案例。
+- 不伪造个人经历。
+- 不伪造权威背书、认证、奖项或专家支持。
+- 不夸大收益、疗效、法律结果、录取结果、求职结果或产品效果。
+- 高风险行业降低改写强度。
+- 保留必要限定词、免责声明和不确定性表达。
 
-Use when the text is clearly stiff, generic, or unsuitable for the target scene.
+## Anti-Overhumanization Rules｜防过度真人化
 
-Actions:
+不要为了真人感把文本改成：过度口语、油腻、低俗、标题党、情绪过载、强行装熟、假装脆弱或低质营销号风格。
 
-- Reorganize paragraphs.
-- Make expression more direct and scene-aware.
-- Improve the opening, transitions, and ending.
-- Increase natural variation in rhythm and emphasis.
+真人化应当自然、克制、有判断、有细节、有取舍、有节奏。
 
-Boundary:
-
-- Do not sacrifice factual precision or professional appropriateness.
-
-### Level 4: 参考样本风格迁移
-
-Use only when a reference sample is provided.
-
-Actions:
-
-- Extract transferable style patterns from the sample.
-- Rebuild the user's text using those general patterns.
-- Preserve the user's own facts and meaning.
-
-Boundary:
-
-- Do not reuse sample-specific content, stories, titles, lines, metaphors, or identifiable phrasing.
-
-### Level 5: 创意重写
-
-Use only when the user explicitly asks for a major rewrite and the content is not high-risk.
-
-Actions:
-
-- Rebuild structure, rhythm, angle, and expression more freely.
-- Produce a more polished and distinctive version.
-- Keep the same factual base and user intent.
-
-Boundary:
-
-- Do not invent facts, examples, authority, data, personal experience, results, or claims.
-- Avoid Level 5 for medical, legal, financial, education outcome, employment, compliance, or safety-sensitive content.
-
-## Reference Sample Rules
-
-When the user provides reference samples, use them only to extract general expression patterns, such as:
-
-- Structure
-- Rhythm
-- Tone
-- Sentence tendency
-- Viewpoint expression
-- Content organization
-
-The following sample elements are not transferable:
-
-- Specific stories
-- Personal experiences
-- Cases
-- Unique metaphors
-- Original sentences
-- Titles
-- Strongly identifiable expressions
-
-The Skill must reorganize and rewrite based on the user's original text. It must not reuse the sample's specific content.
-
-## Safety Rules
-
-Always follow these safety rules:
-
-- Do not fabricate facts.
-- Do not fabricate data.
-- Do not fabricate cases.
-- Do not fabricate personal experience.
-- Do not fabricate authority, endorsement, certification, award, or expert backing.
-- Do not exaggerate revenue, investment return, medical effect, legal result, admission result, hiring result, or product outcome.
-- Reduce rewrite intensity for high-risk industries.
-- Preserve necessary qualifiers, limitations, warnings, disclaimers, and uncertainty markers.
-- Do not turn general information into professional advice.
-- Do not remove legally or commercially important caveats.
-
-## Anti-Overhumanization Rules
-
-Do not create "human feeling" by making the text:
-
-- Too slangy
-- Too wordy
-- Oily or ingratiating
-- Vulgar
-- Clickbait-like
-- Overly emotional
-- Overly familiar
-- Fake casual
-- Like a low-quality marketing account
-- Dependent on forced jokes or fake vulnerability
-
-Humanized text should sound like a real person writing appropriately for the context, not like a performance of being human.
-
-## Output Modes
+## Output Modes｜输出模式
 
 ### concise
 
-Return only the rewritten version.
-
-Use when:
-
-- The user asks for direct output.
-- The text is low-risk.
-- No diagnostic explanation is needed.
+只输出改写后的文本。
 
 ### standard
 
-Return the default structured output:
-
-- AI 感诊断
-- 改写策略
-- 真人化改写版
-- 修改说明
-- 风险提示
-
-Use when:
-
-- The user does not specify an output mode.
-- The user needs a usable rewrite plus brief reasoning.
+默认模式，输出：AI 感诊断、改写策略、真人化改写版、修改说明、风险提示。
 
 ### full
 
-Return a more detailed version:
-
-- Input interpretation
-- Content type
-- Protected facts
-- AI-like tone diagnosis
-- Rewrite strategy
-- Rewritten version
-- Factual consistency notes
-- Safety notes
-- Optional alternate version if useful
-
-Use when:
-
-- The task is complex.
-- The text is high-risk.
-- The user asks for explanation or review.
+输出更完整分析，包括输入理解、内容类型、Protected Facts、诊断、策略、改写版、事实核对、安全提示和可选备用版本。
 
 ### debug
 
-Return internal-style execution details for testing the Skill:
+用于测试 Skill 行为，输出解析字段、内容类型、Protected Facts、风险等级、诊断、强度、平台适配、样本提炼、改写结果和检查结果。
 
-- Parsed fields
-- Content type decision
-- Protected facts list
-- Industry risk level
-- AI tone diagnosis
-- Rewrite intensity
-- Platform adaptation choices
-- Reference sample extraction, if any
-- Final rewrite
-- Check results
-
-Use when:
-
-- Testing prompts, rules, or examples.
-- The user explicitly asks to inspect how the Skill made decisions.
-
-## Default Output Format
-
-Use this structure for `standard` mode:
+## Default Output Format｜默认输出格式
 
 ```markdown
 ## AI 感诊断
@@ -446,21 +194,13 @@ Use this structure for `standard` mode:
 - ...
 ```
 
-If there is no meaningful risk, write:
+如无明显风险，写：`未发现需要特别提示的风险。`
 
-```text
-未发现需要特别提示的风险。
-```
+## Quality Criteria｜质量标准
 
-Keep explanations concise. The rewritten text is the primary deliverable.
-
-## Quality Criteria
-
-Evaluate every output against these criteria:
-
-- 自然度：表达像真实写作者，而不是模板生成。
+- 自然度：像真实写作者，而不是模板生成。
 - 原意保留：核心观点、目的和信息不偏移。
-- 事实保真：数字、名称、结论、限制和关键事实不被改变。
+- 事实保真：数字、名称、结论、限制和关键事实不改变。
 - 平台适配：语气、节奏、结构符合目标平台。
 - 内容类型适配：文章、口播、销售、商务、邮件、简历等各自成立。
 - 无虚构：不添加未经用户提供的事实、案例、数据、经历或背书。

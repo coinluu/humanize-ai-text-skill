@@ -1,4 +1,4 @@
-# No Fabrication Test
+# 禁止虚构测试
 
 ## 测试目标
 

@@ -1,171 +1,32 @@
-# Content Type Router Prompt
-
-## Purpose
-
-Classify the source text into one primary content type and set rewrite priorities.
-
-## Routing Rule
-
-Choose one primary type. If the text could fit multiple types, choose based on where the rewritten text will be used.
-
-## Supported Types
-
-### article
-
-Judgment features:
-
-- Multi-paragraph argument, essay, article, newsletter, or long-form post.
-- Contains观点、解释、论证、案例或段落层次.
-
-Rewrite priorities:
-
-- Improve opening, paragraph flow, transitions, and conclusion.
-- Reduce generic framing.
-- Preserve logic and claims.
-
-### social_note
-
-Judgment features:
-
-- Xiaohongshu-style note, lifestyle share, experience note, short social post.
-- Often practical, personal-sounding, easy to scan.
-
-Rewrite priorities:
-
-- Make it specific, readable, and platform-native.
-- Use short paragraphs.
-- Avoid fake personal experience.
-
-### short_video_script
-
-Judgment features:
-
-- Meant to be spoken in Douyin, video, livestream, course intro, or oral script.
-- Needs pacing, hooks, and spoken rhythm.
-
-Rewrite priorities:
-
-- Use short, speakable sentences.
-- Add natural pauses.
-- Make the logic easy to hear once.
-
-### sales_copy
-
-Judgment features:
-
-- Promotes a product, service, course, event, offer, or consultation.
-- Contains value proposition, pain point, CTA, or benefit claims.
-
-Rewrite priorities:
-
-- Clarify who it is for and what value it offers.
-- Strengthen credibility without adding unsupported proof.
-- Avoid exaggerated outcomes.
-
-### title
-
-Judgment features:
-
-- A headline, subject line, article title, video title, or post title.
-
-Rewrite priorities:
-
-- Make it clear, accurate, and attractive.
-- Do not create false urgency, false scarcity, or misleading claims.
-
-### caption
-
-Judgment features:
-
-- Short text attached to image, video, product, or social post.
-
-Rewrite priorities:
-
-- Keep concise.
-- Match mood and context.
-- Avoid over-explaining.
-
-### comment_reply
-
-Judgment features:
-
-- Reply to a comment, review, objection, DM, or public interaction.
-
-Rewrite priorities:
-
-- Be relevant, warm, concise, and situation-aware.
-- Avoid sounding scripted or defensive.
-
-### private_message
-
-Judgment features:
-
-- One-to-one message, private domain message, outreach, follow-up, or chat copy.
-
-Rewrite priorities:
-
-- Make intent clear.
-- Keep tone natural and respectful.
-- Avoid pressure or excessive familiarity.
-
-### email
-
-Judgment features:
-
-- Email subject, body, follow-up, request, apology, proposal, or work communication.
-
-Rewrite priorities:
-
-- Improve clarity, politeness, structure, and action items.
-- Preserve formal boundaries.
-
-### resume
-
-Judgment features:
-
-- Resume bullets, profile summary, project descriptions, cover letter, or job application content.
-
-Rewrite priorities:
-
-- Make achievements clear and role-relevant.
-- Preserve truthfulness.
-- Do not invent metrics, responsibilities, employers, or outcomes.
-
-### business_doc
-
-Judgment features:
-
-- Report, proposal, memo, plan, meeting summary, announcement, SOP, or business explanation.
-
-Rewrite priorities:
-
-- Use precise, restrained, decision-friendly language.
-- Preserve hierarchy, conditions, and scope.
-
-### knowledge_explanation
-
-Judgment features:
-
-- Explains a concept, method, process, policy, tutorial, or educational content.
-
-Rewrite priorities:
-
-- Improve clarity and logical progression.
-- Use examples only if provided or clearly hypothetical.
-- Preserve accuracy.
-
-### generic_text
-
-Judgment features:
-
-- Does not clearly match another category.
-
-Rewrite priorities:
-
-- Preserve meaning.
-- Improve naturalness, rhythm, and readability.
-
-## Output
+# content_type 路由 Prompt
+
+## 用途
+
+判断原文的主要 `content_type`，并给出对应改写重点。
+
+## 路由规则
+
+只选择一个主要类型。文本可归入多个类型时，以最终发布或使用场景为准。
+
+## 类型规则
+
+| content_type | 判断特征 | 改写重点 |
+| --- | --- | --- |
+| `article` | 多段论述、观点展开、解释或长文 | 优化开头、段落推进、逻辑和结尾 |
+| `social_note` | 小红书/社交笔记，强调经验感和扫读 | 短段落、具体、自然、不伪造体验 |
+| `short_video_script` | 口播、短视频、直播脚本 | 短句、停顿、前三秒钩子、好朗读 |
+| `sales_copy` | 产品/服务/课程/咨询推广 | 明确适合谁、价值和边界，不承诺结果 |
+| `title` | 标题、主题行、视频标题 | 清楚、准确、有吸引力，不误导 |
+| `caption` | 图片/视频/社交配文 | 简短、贴合场景，不强行升华 |
+| `comment_reply` | 评论、评价、异议、互动回复 | 相关、自然、友好、有边界 |
+| `private_message` | 私信、私域、跟进、邀约 | 意图清楚，语气自然，不过度压迫 |
+| `email` | 邮件、商务沟通 | 礼貌、结构清楚、行动明确 |
+| `resume` | 简历、求职信、项目经历 | 真实、具体、岗位相关，不编成果 |
+| `business_doc` | 汇报、方案、纪要、SOP | 精准、克制、可决策 |
+| `knowledge_explanation` | 知识解释、教程、科普 | 准确、易懂、逻辑清楚 |
+| `generic_text` | 无明确类型 | 保留原意，提升自然度和可读性 |
+
+## 输出
 
 ```yaml
 content_type_result:
@@ -174,4 +35,3 @@ content_type_result:
   judgment_features: []
   rewrite_priorities: []
 ```
-

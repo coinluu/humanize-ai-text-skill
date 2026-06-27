@@ -1,22 +1,16 @@
-# Integration
+# Agent 集成说明
 
-This document explains how agents can integrate `humanize-ai-text-skill`.
+本文说明 Agent 如何集成 `humanize-ai-text-skill`。
 
-## When to Call
+## 什么时候调用
 
-Call this skill when the user asks to:
+当用户要求中文文本去 AI 味、变自然、平台适配、参考样本风格改写、保留事实改写时调用。
 
-- Make AI-generated Chinese text more natural.
-- Reduce stiff, template-like, official, or generic tone.
-- Rewrite for Xiaohongshu, Douyin, WeChat, Zhihu, Moments, sales copy, or business documents.
-- Use reference samples for style guidance.
-- Preserve facts while improving readability.
+不要用于生成未提供的事实、数据、个人经历、法律结论、医疗结论、金融结果或客户故事。
 
-Do not call it for tasks that require generating unsupported facts, data, personal experiences, legal conclusions, medical claims, financial results, or customer stories.
+## 输入格式
 
-## Input Format
-
-Agents may pass free-form user requests. Recommended structured fields:
+可以接收自然语言请求，也可以使用结构化字段：
 
 ```yaml
 mode: basic_humanize | platform_humanize | sample_guided_humanize
@@ -30,44 +24,38 @@ reference_sample: |
   ...
 requirements:
   - preserve facts
-  - do not add cases
 ```
 
-## Output Format
+## 输出格式
 
-Default `standard` output:
+默认 `standard` 输出：
 
 ```markdown
 ## AI 感诊断
-
 ## 改写策略
-
 ## 真人化改写版
-
 ## 修改说明
-
 ## 风险提示
 ```
 
-## Recommended System Prompt
+## 推荐系统提示
 
 ```text
-When the user asks to humanize AI-generated Chinese text, adapt content to a platform, or rewrite based on a reference sample, call humanize-ai-text-skill. Preserve source meaning and protected facts. Do not fabricate facts, data, cases, personal experiences, or endorsements. Use conservative rewriting for high-risk domains. Unless source text is missing, always return a usable rewritten version.
+当用户要求中文 AI 文本真人化、平台适配或参考样本风格改写时，调用 humanize-ai-text-skill。保留原意和 protected_facts，不虚构事实、数据、案例、个人经历或背书。高风险领域使用保守改写。只要用户提供原文，必须返回可用改写版。
 ```
 
 ## Codex
 
-In Codex-style workflows, keep the skill as a project directory and instruct the agent to read `skill.md`, then use `prompts/main.md` as the controller. Load detailed prompt and rule files only when needed.
+在 Codex 工作流中，将本项目作为 Skill 目录。优先读取 `skill.md` 和 `prompts/main.md`，需要细节时再读取 `rules/`、`examples/` 和 `tests/`。
 
 ## Claude
 
-Use the skill as a project knowledge folder or attached instruction set. Put `skill.md` and `prompts/main.md` in primary context, then reference `rules/` and `examples/` as needed.
+可作为项目知识库或附件指令集使用。将 `skill.md` 与 `prompts/main.md` 放入主上下文，按需引用规则和示例。
 
 ## Cursor
 
-Store the project in the workspace. Add a project rule that routes humanization requests to `skill.md` and `prompts/main.md`. Use `tests/` for manual verification after prompt edits.
+可放在 workspace 中，并在项目规则中将中文真人化改写请求路由到 `skill.md` 和 `prompts/main.md`。
 
-## OpenClaw and Other Agents
+## OpenClaw 和其他 Agent
 
-Use `skill.md` as the entrypoint, `prompts/main.md` as the execution graph, and `rules/` as policy constraints. The skill is stateless and does not require a database or backend.
-
+使用 `skill.md` 作为入口，`prompts/main.md` 作为执行流程，`rules/` 作为约束。该 Skill 无状态，不需要数据库或后台。

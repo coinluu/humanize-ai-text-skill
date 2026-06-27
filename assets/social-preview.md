@@ -1,18 +1,19 @@
-# Social Preview
+# 社交平台预览文案
 
-Humanize AI Text Skill is an agent-ready skill for rewriting AI-generated Chinese drafts into natural, human-like, platform-ready content.
+Humanize AI Text Skill 是一个 Agent 可调用的中文文本真人化编辑 Skill。
 
-It supports:
+它可以把 AI 生成的中文初稿改得更自然、更可信、更适合平台发布。
 
-- Xiaohongshu notes
-- Douyin scripts
-- WeChat articles
-- Moments posts
-- Sales copy
-- Business documents
-- Reference sample style extraction
-- Protected facts preservation
-- Safety checks
+支持：
 
-Built for agent workflows. No database required.
+- 小红书笔记
+- 抖音口播
+- 公众号文章
+- 朋友圈内容
+- 销售文案
+- 商务文档
+- 参考样本风格提炼
+- Protected Facts 保真
+- 高风险内容安全检查
 
+适合 Agent 工作流，不需要数据库。

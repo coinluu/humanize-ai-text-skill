@@ -1,6 +1,6 @@
-# Usage Examples
+# 调用示例
 
-Copy any prompt below into an Agent conversation to call `humanize-ai-text-skill`.
+把下面任意 Prompt 复制到 Agent 对话中，即可调用 `humanize-ai-text-skill`。
 
 ## 1. 普通去 AI 味调用
 

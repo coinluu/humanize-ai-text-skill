@@ -1,52 +1,40 @@
-# Input Parser Prompt
+# 输入解析 Prompt
 
-## Purpose
+## 用途
 
-Parse the user's request into structured fields that downstream modules can use.
+把用户请求解析成结构化字段，供后续模块使用。
 
-## Inputs to Identify
+## 需要识别
 
-Extract:
+- `source_text`：待改写原文。
+- `mode`：`basic_humanize`、`platform_humanize` 或 `sample_guided_humanize`。
+- `platform`：目标平台或沟通场景。
+- `content_type`：用户指定或自动推断的内容类型。
+- `target_reader`：目标读者。
+- `author_identity`：作者身份或口吻。
+- `reference_sample`：参考样本。
+- `rewrite_intensity`：Level 1-5 或 `auto`。
+- `output_mode`：`concise`、`standard`、`full`、`debug`。
+- `allow_hypothetical_scenarios`：是否允许明确标识的假设场景。
+- `must_keep`：必须保留内容。
+- `must_avoid`：必须避免内容。
+- `language`：默认中文。
 
-- `source_text`: the text to rewrite.
-- `mode`: `basic_humanize`, `platform_humanize`, or `sample_guided_humanize`.
-- `platform`: target platform or communication channel.
-- `content_type`: requested or inferred content type.
-- `target_reader`: intended reader or audience.
-- `author_identity`: who the text should sound like, if provided.
-- `reference_sample`: sample text provided for style guidance.
-- `rewrite_intensity`: requested Level 1-5 or natural language equivalent.
-- `output_mode`: `concise`, `standard`, `full`, or `debug`.
-- `allow_hypothetical_scenarios`: whether the user explicitly allows hypothetical scenarios.
-- `must_keep`: facts, phrases, tone, structure, or sections the user wants preserved.
-- `must_avoid`: words, claims, tone, structure, or changes the user forbids.
-- `language`: default to Chinese unless otherwise requested.
+## 推断规则
 
-## Inference Rules
+- 用户说“去 AI 味”“自然一点”“像真人写”：`mode: basic_humanize`。
+- 用户指定平台：`mode: platform_humanize`。
+- 用户提供参考样本：`mode: sample_guided_humanize`。
+- 多个模式同时出现时，优先级：sample-guided > platform > basic。
+- 未指定内容类型时，自动推断。
+- 未指定输出模式时，使用 `standard`。
+- 未明确允许假设场景时，设为 `false`。
 
-- If the user says "去 AI 味", "自然一点", or "像真人写", set `mode: basic_humanize`.
-- If the user names a platform, set `mode: platform_humanize` and record the platform.
-- If the user provides a reference sample, set `mode: sample_guided_humanize`.
-- If multiple modes apply, prefer the most specific mode: sample-guided over platform over basic.
-- If no content type is given, infer it from the source text and user goal.
-- If no rewrite intensity is given, leave it as `auto` for the controller.
-- If no output mode is given, set `output_mode: standard`.
-- If hypothetical scenarios are not explicitly allowed, set `allow_hypothetical_scenarios: false`.
+## 追问规则
 
-## Clarification Rules
+不要频繁追问。只有以下情况才问：缺少原文；用户要求添加未提供的事实、案例、数据或经历；高风险内容无法保守处理。
 
-Do not ask questions for ordinary missing preferences. Infer conservatively.
-
-Ask one concise question only when:
-
-- No source text is provided.
-- The target platform is essential and ambiguous.
-- The text involves high-risk claims and the requested change could alter meaning.
-- The user asks to add cases, data, or personal experience without providing real material.
-
-## Output
-
-Return a structured result:
+## 输出
 
 ```yaml
 parsed_input:
@@ -67,4 +55,3 @@ parsed_input:
   clarification_needed: false
   clarification_question: ""
 ```
-

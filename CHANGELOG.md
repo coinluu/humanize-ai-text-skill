@@ -1,23 +1,18 @@
-# Changelog
+# 更新日志
 
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows semantic versioning.
+本文件记录项目的重要变更。格式参考 Keep a Changelog，版本遵循语义化版本。
 
 ## [1.0.0] - 2026-06-27
 
-### Added
+### 新增
 
-- Agent-ready skill structure for AI-text humanization.
-- `basic_humanize` mode for general AI-tone reduction and natural rewriting.
-- `platform_humanize` mode for platform-aware adaptation.
-- `sample_guided_humanize` mode for reference sample style extraction.
-- Platform adaptation workflow for Xiaohongshu, Douyin scripts, WeChat articles, Moments, private groups, sales copy, business documents, and generic text.
-- Content type routing for articles, social notes, short-video scripts, sales copy, titles, captions, comment replies, private messages, emails, resumes, business documents, knowledge explanations, and generic text.
-- Protected facts preservation before and after rewriting.
-- Reference sample style extraction rules that transfer general expression patterns only.
-- Safety checks for high-risk domains.
-- Anti-overhumanization rules to prevent forced slang, exaggerated emotion, oily tone, and low-quality marketing style.
-- Before/after examples for major usage scenarios.
-- Test specifications for basic rewriting, platform adaptation, content type routing, sample-guided rewriting, safety, protected facts, no fabrication, and anti-overhumanization.
-
+- Agent-ready Skill 结构。
+- `basic_humanize`：普通 AI 初稿真人化编辑。
+- `platform_humanize`：按平台进行中文内容适配。
+- `sample_guided_humanize`：参考样本风格提炼。
+- 支持小红书、抖音口播、公众号、知乎、朋友圈、私域社群、销售文案、商务文档和通用文本。
+- 支持内容类型识别。
+- 支持 Protected Facts 改写前抽取和改写后核对。
+- 支持高风险内容安全检查。
+- 支持防过度真人化规则。
+- 包含 examples、docs、assets、marketing 和 tests。

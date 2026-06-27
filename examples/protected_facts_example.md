@@ -1,4 +1,4 @@
-# Protected Facts Example
+# Protected Facts 保真示例
 
 ## 场景
 
@@ -15,7 +15,7 @@ output_mode: full
 allow_hypothetical_scenarios: false
 ```
 
-## Before
+## 改写前
 
 ```text
 星河科技将在 2026 年 7 月 1 日至 7 月 7 日推出 FlowPilot Pro 限时体验活动，体验价为 199 元。活动仅面向已完成企业认证的新用户，每家公司限购 1 次。具体服务内容以合同条款为准。
@@ -52,7 +52,7 @@ contract_terms:
 - 不新增优惠、名额、效果或服务承诺。
 - 把关键信息拆开，方便阅读。
 
-## After
+## 改写后
 
 ```text
 给你同步一个 FlowPilot Pro 的限时体验活动。

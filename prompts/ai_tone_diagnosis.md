@@ -1,32 +1,27 @@
-# AI Tone Diagnosis Prompt
+# AI 感诊断 Prompt
 
-## Purpose
+## 用途
 
-Identify why the source text feels AI-generated, template-like, overly official, or unnatural.
+诊断原文为什么显得像 AI 生成、模板化、官方化或不自然。
 
-## Diagnose These Issues
+## 检查项
 
-Check for:
+- 宏大空泛开头：如“在当今时代”“随着……发展”。
+- 结构模板化：总分总、三段式、机械排比。
+- 连接词过多：首先、其次、此外、因此堆叠。
+- 抽象词过多：赋能、闭环、生态、价值、升级等无具体支撑。
+- 缺少具体场景：没有对象、动作、读者处境。
+- 缺少作者判断：只总结，不取舍。
+- 句式过于平均：每句话长度和节奏相似。
+- 语气过度中立：安全但平。
+- 营销腔过重：承诺过强、夸赞过多。
+- 平台不匹配：不符合目标渠道阅读习惯。
 
-- 宏大空泛开头: broad openings such as "在当今时代", "随着社会发展".
-- 结构模板化: predictable intro-analysis-summary, repeated three-part lists, or rigid parallelism.
-- 连接词过多: excessive "首先/其次/最后", "因此/同时/此外".
-- 抽象词过多: vague terms such as "赋能", "打造", "提升效率", "实现价值" without concrete support.
-- 缺少具体场景: no clear reader situation, action, object, or context.
-- 缺少作者判断: neutral summary with no clear stance, selection, or emphasis.
-- 句式过于平均: sentences of similar length and rhythm.
-- 语气过度中立: safe but flat, distant, or official.
-- 营销腔过重: inflated promises, excessive praise, or pressure-heavy CTA.
-- 平台不匹配: style does not fit the target channel.
+## 判断规则
 
-## Judgment Rules
+只输出 3-6 个最影响改写的问题。诊断要服务改写，不做冗长批评。高风险内容不推动更强说服，只推动更清楚准确。
 
-- Output only the 3-6 most important issues.
-- Focus on issues that should guide the rewrite.
-- Do not overdiagnose normal formal writing.
-- For high-risk content, prefer restrained diagnosis and do not push for stronger persuasion.
-
-## Output
+## 输出
 
 ```yaml
 ai_tone_diagnosis:
@@ -36,4 +31,3 @@ ai_tone_diagnosis:
       rewrite_direction: ""
   overall_summary: ""
 ```
-

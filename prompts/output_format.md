@@ -1,26 +1,20 @@
-# Output Format Prompt
+# 输出格式 Prompt
 
-## Purpose
+## 用途
 
-Format the final response according to the selected output mode.
+按选定 `output_mode` 格式化最终回答。
 
-## General Formatting Rules
+## 通用格式规则
 
-- Use Markdown.
-- Put the rewritten text where the user can easily copy it.
-- Keep notes concise unless `full` or `debug` is selected.
-- Do not expose excessive internal reasoning.
-- Include risk notes only when relevant, except in `standard`, where the risk section may say no special risk was found.
+使用 Markdown。把改写文本放在容易复制的位置。除 `full` 或 `debug` 外，说明保持简洁。不暴露过多内部推理。风险提示要与实际风险匹配。
 
-## concise Format
+## concise 格式
 
 ```markdown
 {真人化改写版}
 ```
 
-Use no headings unless needed for multi-version output.
-
-## standard Format
+## standard 格式
 
 ```markdown
 ## AI 感诊断
@@ -47,68 +41,41 @@ Use no headings unless needed for multi-version output.
 
 ## 风险提示
 
-{如有风险，说明保留了哪些限制和为什么；如无风险，写：未发现需要特别提示的风险。}
+{如有风险，说明保留了哪些限制和原因；如无风险，写：未发现需要特别提示的风险。}
 ```
 
-Requirements:
-
-- Diagnosis should be 3-6 bullets.
-- Strategy should directly match the diagnosis.
-- Rewrite must be the main deliverable.
-- Risk warning must not be alarmist.
-
-## full Format
+## full 格式
 
 ```markdown
 ## AI 感诊断
 
-- {主要问题}
-
 ## Protected Facts
-
-- {必须保留的事实}
 
 ## 改写策略
 
-- {策略}
-
 ## 真人化改写版
-
-{最终改写文本}
 
 ## 备用版本
 
-{另一种可用版本；如不适合提供，写：本次不提供备用版本，避免引入不必要的表达漂移。}
-
 ## 修改说明
-
-- {具体修改说明}
 
 ## 事实一致性检查
 
-- {数字、名称、日期、结论、限定词是否保留}
-
 ## 风险提示
 
-{风险或无风险说明}
-
 ## 可发布评分
-
-{1-10 分} / 10
-
-理由：{一句话说明评分依据}
 ```
 
-## debug Format
+## debug 格式
 
 ````markdown
-## Parsed Input
+## 输入解析
 
 ```yaml
 {parsed_input}
 ```
 
-## Content Type Decision
+## content_type 判断
 
 ```yaml
 {content_type_result}
@@ -120,64 +87,47 @@ Requirements:
 {protected_facts}
 ```
 
-## Safety Check
+## 安全检查
 
 ```yaml
 {safety_check}
 ```
 
-## AI Tone Diagnosis
+## AI 感诊断
 
 ```yaml
 {ai_tone_diagnosis}
 ```
 
-## Rewrite Intensity Decision
+## 改写强度判断
 
 ```yaml
 {rewrite_intensity_decision}
 ```
 
-## Platform Adaptation
+## 平台适配
 
 ```yaml
 {platform_adaptation}
 ```
 
-## Sample Style Analysis
+## 参考样本风格分析
 
 ```yaml
 {sample_style_analysis_if_any}
 ```
 
-## Sample Style Patterns
-
-```yaml
-{sample_style_patterns_if_any}
-```
-
-## Rewrite Result
+## 改写结果
 
 ```yaml
 {rewrite_result}
 ```
 
-## Factual Consistency Check
-
-```yaml
-{factual_consistency_check}
-```
-
-## Final Output
+## 最终输出
 
 {final_user_facing_output}
 ````
 
-## Final Check
+## 最终检查
 
-Before returning, confirm:
-
-- The selected format is followed.
-- The rewritten version is present.
-- Risk notes match the actual risk level.
-- Debug output is only used when requested.
+确认格式正确、改写版存在、风险提示准确，且仅在用户要求时使用 `debug`。

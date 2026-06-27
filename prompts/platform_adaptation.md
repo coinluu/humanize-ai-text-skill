@@ -1,263 +1,28 @@
-# Platform Adaptation Prompt
+# 平台适配 Prompt
 
-## Purpose
+## 用途
 
-Adapt expression to the target platform or communication channel without changing facts or creating platform stereotypes.
+根据目标平台或沟通场景调整语言密度、段落节奏、语气、开头和结尾方式，同时保留事实。
 
-## General Rules
+## 通用规则
 
-- Match the platform's reading rhythm and expected density.
-- Keep the user's core meaning and protected facts.
-- Do not invent personal experience, data, cases, or results.
-- Avoid clickbait, exaggerated emotion, and unsupported claims.
+匹配平台阅读习惯；不虚构体验、数据、案例；不夸大效果；不使用平台刻板口头禅。
 
-## Platform Rules
+## 平台规则
 
-### 小红书
+| 平台 | 语言目标 | 段落/语气规则 | 禁止事项 |
+| --- | --- | --- | --- |
+| 小红书 | 实用、轻表达、好扫读 | 1-3 句一段，具体、自然、有轻判断 | 亲测、必买、效果绝了等无依据表达 |
+| 抖音口播 | 好朗读、短句、有节奏 | 按停顿分段，先给钩子 | 长书面句、抽象背景 |
+| 公众号 | 有观点、有解释、有结构 | 中等段落，每段推进一个意思 | 宏大空泛开头、机械总结 |
+| 知乎 | 有判断、有论证、有边界 | 先答问题，再解释原因 | 情绪化、硬广、无证据强结论 |
+| 朋友圈 | 简短、自然、低压力 | 少结构，像真实分享 | 长篇销售话术、强行装熟 |
+| 私域社群 | 有用、清楚、可行动 | 先说价值，再说下一步 | 压迫式成交、虚假收益 |
+| 销售文案 | 可信、清楚、有转化导向 | 问题、价值、证据、行动 | 保证结果、虚假稀缺、虚假背书 |
+| 商务文档 | 准确、专业、可决策 | 结论、依据、下一步清楚 | 过度口语、情绪化判断 |
+| 通用文本 | 自然、清楚、保留原意 | 按意思分段，避免套话 | 空泛排比、夸张承诺 |
 
-Language goal:
-
-- Practical, readable, lightly personal, and easy to scan.
-
-Suitable:
-
-- Short paragraphs.
-- Concrete observations.
-- Gentle evaluation.
-- "适合谁/不适合谁" if supported by source.
-
-Not suitable:
-
-- Fake personal experience.
-- Overstated product effects.
-- Too many slogans or hard-sell phrases.
-
-Paragraph rules:
-
-- Use 1-3 sentence paragraphs.
-- Keep each point visually clear.
-
-Tone rules:
-
-- Natural, specific, restrained, not performative.
-
-### 抖音口播
-
-Language goal:
-
-- Speakable, direct, paced, and easy to understand on first listen.
-
-Suitable:
-
-- Short sentences.
-- Clear turns.
-- Natural pauses.
-- Direct opening.
-
-Not suitable:
-
-- Long nested sentences.
-- Dense written-language paragraphs.
-- Abstract claims without a spoken anchor.
-
-Paragraph rules:
-
-- Break by breath or idea.
-- Each paragraph should be easy to say aloud.
-
-Tone rules:
-
-- Conversational but not loud or exaggerated unless the brand voice requires it.
-
-### 公众号
-
-Language goal:
-
-- Thoughtful, structured, readable, and credible.
-
-Suitable:
-
-- Clear opening problem or observation.
-- Smooth transitions.
-- Paragraph-level logic.
-- Moderate author judgment.
-
-Not suitable:
-
-- Grand empty opening.
-- Mechanical summary ending.
-- Excessively casual slang.
-
-Paragraph rules:
-
-- Use medium-length paragraphs.
-- Each paragraph should advance one idea.
-
-Tone rules:
-
-- Calm, clear, reflective, not overly official.
-
-### 知乎
-
-Language goal:
-
-- Clear reasoning, grounded judgment, and answer-oriented structure.
-
-Suitable:
-
-- Direct answer first when appropriate.
-- Explain reasoning.
-- Distinguish fact, opinion, and condition.
-
-Not suitable:
-
-- Vague motivational language.
-- Unsupported certainty.
-- Marketing tone.
-
-Paragraph rules:
-
-- Use logic blocks.
-- Add bullets only when they improve readability.
-
-Tone rules:
-
-- Rational, experienced, and precise.
-
-### 朋友圈
-
-Language goal:
-
-- Natural, concise, low-pressure, and personal-feeling without fake experience.
-
-Suitable:
-
-- Short sentences.
-- Light emotion.
-- Everyday wording.
-
-Not suitable:
-
-- Long sales pitch.
-- Forced intimacy.
-- Overly polished article tone.
-
-Paragraph rules:
-
-- Keep compact.
-- Avoid too many sections.
-
-Tone rules:
-
-- Relaxed and sincere.
-
-### 私域社群
-
-Language goal:
-
-- Clear, useful, community-aware, and action-oriented.
-
-Suitable:
-
-- Direct value.
-- Clear next step.
-- Friendly but bounded tone.
-
-Not suitable:
-
-- Pressure-heavy sales language.
-- Excessive emoji-like enthusiasm.
-- Fake closeness.
-
-Paragraph rules:
-
-- Start with context or benefit.
-- End with a clear action if needed.
-
-Tone rules:
-
-- Warm, practical, not pushy.
-
-### 销售文案
-
-Language goal:
-
-- Credible persuasion with clear value and responsible claims.
-
-Suitable:
-
-- Audience pain points.
-- Specific benefits supported by source.
-- Clear CTA.
-
-Not suitable:
-
-- Guaranteed results.
-- Fake scarcity.
-- Unsupported social proof.
-
-Paragraph rules:
-
-- Problem, value, proof if provided, action.
-
-Tone rules:
-
-- Confident and restrained.
-
-### 商务文档
-
-Language goal:
-
-- Precise, professional, structured, and decision-friendly.
-
-Suitable:
-
-- Clear conclusion.
-- Conditions and scope.
-- Action items.
-
-Not suitable:
-
-- Over-casual language.
-- Emotional persuasion.
-- Unsupported certainty.
-
-Paragraph rules:
-
-- Use headings or bullets when useful.
-- Keep hierarchy clear.
-
-Tone rules:
-
-- Professional, concise, and accountable.
-
-### 通用文本
-
-Language goal:
-
-- Natural, clear, and readable.
-
-Suitable:
-
-- Varied sentence rhythm.
-- Concrete wording.
-- Direct transitions.
-
-Not suitable:
-
-- Formulaic AI openings.
-- Empty slogans.
-- Excessive embellishment.
-
-Paragraph rules:
-
-- Organize by idea.
-
-Tone rules:
-
-- Match the user's original intent and audience.
-
-## Output
+## 输出
 
 ```yaml
 platform_adaptation:
@@ -268,4 +33,3 @@ platform_adaptation:
   paragraph_rules: []
   tone_rules: []
 ```
-

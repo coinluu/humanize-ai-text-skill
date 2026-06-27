@@ -1,17 +1,17 @@
 # Humanize AI Text Skill v1.0.0
 
-## Highlights
+## 版本亮点
 
-- Agent-ready AI text humanization skill
-- Supports basic_humanize, platform_humanize, and sample_guided_humanize
-- Supports Chinese text rewriting for Xiaohongshu, Douyin scripts, WeChat articles, Zhihu, Moments, sales copy, business documents, and generic text
-- Includes protected facts preservation
-- Includes reference sample style extraction
-- Includes safety checks for high-risk domains
-- Includes anti-overhumanization rules
-- Includes examples, docs, and tests
+- Agent-ready 中文 AI 初稿真人化编辑 Skill。
+- 支持 `basic_humanize`、`platform_humanize`、`sample_guided_humanize`。
+- 支持小红书、抖音口播、公众号、知乎、朋友圈、销售文案、商务文档和通用文本。
+- 包含 Protected Facts 保真机制。
+- 包含参考样本风格提炼规则。
+- 包含高风险内容安全检查。
+- 包含防过度真人化规则。
+- 包含 examples、docs、assets、marketing 和 tests。
 
-## What is included
+## 本版本包含
 
 - skill.md
 - prompts/
@@ -27,6 +27,6 @@
 - SECURITY.md
 - CHANGELOG.md
 
-## Safety
+## 安全说明
 
-This skill is designed to improve writing quality and platform readiness. It is not designed to bypass AI detectors or fabricate facts.
+本 Skill 用于提升文本质量、平台适配和可发布质量。它不用于虚构事实、数据、案例、个人经历或权威背书。

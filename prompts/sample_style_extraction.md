@@ -1,46 +1,26 @@
-# Sample Style Extraction Prompt
+# 参考样本风格提炼 Prompt
 
-## Purpose
+## 用途
 
-Extract transferable style patterns from reference samples while excluding sample-specific content.
+从参考样本中提炼可迁移的通用表达规律，同时排除样本具体内容。
 
-## Transferable Elements
+## 可迁移
 
-Only extract:
+结构、节奏、语气、句式倾向、观点表达方式、内容组织方式、细节密度、抽象的开头/结尾策略、观察与结论的关系。
 
-- Structure
-- Rhythm
-- Tone
-- Sentence tendency
-- Viewpoint expression
-- Content organization
-- Level of detail
-- Opening and ending strategy in abstract form
-- Relationship between observation, reasoning, and conclusion
+## 不可迁移
 
-## Non-Transferable Elements
+具体故事、个人经历、案例、独特比喻、原句、标题、强识别性表达、样本中的人物/品牌/地名/事件/数据、标志性口头禅或口号。
 
-Do not transfer:
+## 规则
 
-- Specific stories
-- Personal experiences
-- Cases
-- Unique metaphors
-- Original sentences
-- Titles
-- Strongly identifiable expressions
-- Names, places, brands, events, or examples from the sample
-- Distinctive jokes, slogans, or signature phrasing
+- 用中性专业语言描述风格规律。
+- 把具体样本行为转成抽象指导。
+- 样本不是事实来源。
+- 不用样本内容补足用户原文缺失信息。
+- 样本风格与安全规则冲突时，放弃该风格特征。
 
-## Extraction Rules
-
-- Describe patterns in neutral, professional language.
-- Convert concrete sample behavior into abstract guidance.
-- Do not treat the sample as a source of facts.
-- Do not use sample content to fill missing facts in the user's text.
-- If a sample trait conflicts with user facts, platform rules, or safety rules, discard it.
-
-## Output
+## 输出
 
 ```yaml
 sample_style_patterns:
@@ -54,4 +34,3 @@ sample_style_patterns:
   must_not_transfer: []
   safety_notes: []
 ```
-

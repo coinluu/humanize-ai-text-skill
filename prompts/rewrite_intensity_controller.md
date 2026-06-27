@@ -1,119 +1,41 @@
-# Rewrite Intensity Controller Prompt
+# 改写强度控制 Prompt
 
-## Purpose
+## 用途
 
-Choose the appropriate rewrite intensity from Level 1-5 based on the user's request, platform, content type, industry risk, and source quality.
+根据用户要求、平台、内容类型、行业风险和 AI 感程度，选择 Level 1-5 改写强度。
 
-## Inputs
+## 强度说明
 
-Use:
+### Level 1：轻度润色
 
-- User requested intensity
-- Content type
-- Platform
-- Industry risk
-- AI tone diagnosis
-- Protected facts
-- Reference sample availability
-- Whether the user permits hypothetical scenarios
+适合正式、高风险或用户要求“不要改太多”的文本。只优化措辞、标点和轻微节奏。
 
-## Levels
+### Level 2：中度自然化
 
-### Level 1: 轻度润色
+普通去 AI 味默认强度。可调整句式、段落节奏和连接方式，但不新增事实。
 
-Use when:
+### Level 3：强真人化
 
-- Text is formal, sensitive, or already acceptable.
-- The user asks for "润色", "稍微自然一点", or "不要改太多".
-- The text involves medical, legal, financial, education outcome, job application, compliance, or safety-sensitive content.
+适合明显僵硬或平台不适配的文本。可重组段落、优化开头结尾和表达节奏。
 
-Allowed:
+### Level 4：参考样本风格迁移
 
-- Smooth wording.
-- Improve punctuation and sentence flow.
-- Remove obvious stiff phrases.
+仅在用户提供参考样本时使用。只迁移通用表达规律。
 
-Boundary:
+### Level 5：创意重写
 
-- Keep structure and claims almost unchanged.
+仅在用户明确要求大幅重写且内容低风险时使用。不得用于高风险内容。
 
-### Level 2: 中度自然化
+## 自动选择规则
 
-Use when:
+- 高风险内容默认 Level 1，最多 Level 2。
+- 指定平台且低风险时默认 Level 2 或 Level 3。
+- 提供参考样本时使用 Level 4，但受安全风险限制。
+- 用户只要求轻微润色时用 Level 1。
+- 原文非常模板化且低风险时可用 Level 3。
+- 未指定时默认 Level 2。
 
-- User asks for normal "去 AI 味" or "自然一点".
-- No high-risk issue is present.
-- The text needs rhythm and paragraph improvement.
-
-Allowed:
-
-- Rewrite sentences.
-- Adjust paragraph rhythm.
-- Replace abstract wording with supported clear expression.
-
-Boundary:
-
-- Do not add new cases, data, or personal experience.
-
-### Level 3: 强真人化
-
-Use when:
-
-- Text is highly mechanical.
-- Platform adaptation needs stronger changes.
-- User asks for "更像真人", "更有表达感", or "更适合发布".
-
-Allowed:
-
-- Reorganize structure.
-- Rewrite opening and ending.
-- Add natural emphasis and author judgment based on existing meaning.
-
-Boundary:
-
-- Do not weaken accuracy or become exaggerated.
-
-### Level 4: 参考样本风格迁移
-
-Use when:
-
-- Reference sample is provided and user asks to learn style.
-
-Allowed:
-
-- Transfer general structure, rhythm, tone, sentence tendency, and organization.
-
-Boundary:
-
-- Do not reuse sample stories, examples, titles, phrases, metaphors, or identifiable expressions.
-
-### Level 5: 创意重写
-
-Use when:
-
-- User explicitly asks for creative rewriting, major reconstruction, or multiple bold versions.
-- Content is low-risk.
-- Protected facts are limited and easy to preserve.
-
-Allowed:
-
-- Rebuild angle, structure, and expression more freely.
-
-Boundary:
-
-- Do not invent facts, data, cases, personal experience, results, or authority.
-- Do not use for high-risk content.
-
-## Auto-Selection Rules
-
-- If high-risk: default to Level 1; use Level 2 only if the rewrite is purely clarity-focused.
-- If platform is named and low-risk: default to Level 2 or Level 3.
-- If sample is provided: use Level 4, then cap by safety risk.
-- If the user asks only for light polish: use Level 1.
-- If the source is extremely generic but low-risk: use Level 3.
-- If no preference is given: use Level 2.
-
-## Output
+## 输出
 
 ```yaml
 rewrite_intensity_decision:
@@ -123,4 +45,3 @@ rewrite_intensity_decision:
   forbidden_changes: []
   safety_cap_applied: true|false
 ```
-

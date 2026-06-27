@@ -1,4 +1,4 @@
-# Douyin Script Example
+# 抖音口播示例
 
 ## 场景
 
@@ -15,7 +15,7 @@ output_mode: standard
 allow_hypothetical_scenarios: true
 ```
 
-## Before
+## 改写前
 
 ```text
 很多企业在使用 AI 工具时，往往只关注单点工具的使用，而忽视了工作流的整体搭建，因此无法真正发挥 AI 对业务效率提升的作用。
@@ -35,7 +35,7 @@ allow_hypothetical_scenarios: true
 - 用假设性场景解释"工具"和"工作流"的区别。
 - 保留原意：问题不在工具，而在流程没有串起来。
 
-## After
+## 改写后
 
 ```text
 你以为公司用了 AI，效率就一定会变高吗？

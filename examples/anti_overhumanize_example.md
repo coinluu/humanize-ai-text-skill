@@ -1,4 +1,4 @@
-# Anti-Overhumanize Example
+# 防过度真人化示例
 
 ## 场景
 
@@ -14,7 +14,7 @@ output_mode: standard
 allow_hypothetical_scenarios: false
 ```
 
-## Before
+## 改写前
 
 ```text
 本次流程优化将帮助团队减少重复沟通，提升任务协作效率，并进一步明确项目推进过程中的责任分工。
@@ -46,7 +46,7 @@ allow_hypothetical_scenarios: false
 - 使用更自然的句式，减少套话感。
 - 不新增确定性结果承诺。
 
-## After
+## 改写后
 
 ```text
 本次流程优化的重点，是减少团队在任务确认和进度同步上的重复沟通。

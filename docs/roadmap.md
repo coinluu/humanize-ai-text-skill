@@ -1,38 +1,37 @@
 # Roadmap
 
-## v1.1: More Platform Examples
+## v1.1：更多平台示例
 
-- More Xiaohongshu examples.
-- More Douyin and short-video scripts.
-- More WeChat article patterns.
-- More private group and sales-message examples.
+- 更多小红书示例。
+- 更多抖音口播稿。
+- 更多公众号文章结构。
+- 更多私域社群和销售消息示例。
 
-## v1.2: More Industry Safety Rules
+## v1.2：更多行业安全规则
 
-- Healthcare writing examples.
-- Legal information examples.
-- Financial and investment examples.
-- Education and job-search examples.
-- Local-life and review-related safety examples.
+- 医疗健康示例。
+- 法律信息示例。
+- 金融投资示例。
+- 教育培训和求职示例。
+- 本地生活和评价相关安全示例。
 
-## v1.3: English Support
+## v1.3：英文支持
 
-- English rewrite modes.
-- English platform adaptation.
-- Bilingual before/after examples.
-- Cross-language consistency checks.
+- 英文改写模式。
+- 英文平台适配。
+- 中英双语 Before/After 示例。
+- 跨语言一致性检查。
 
-## v1.4: Benchmark
+## v1.4：benchmark
 
-- Evaluation prompts.
-- Scoring rubric.
-- Before/after quality metrics.
-- Safety regression cases.
+- 评测 Prompt。
+- 评分标准。
+- Before/After 质量指标。
+- 安全回归测试。
 
-## v2.0: Optional Tooling Specification
+## v2.0：可选工具化调用规范
 
-- Machine-readable invocation format.
-- Optional JSON schema.
-- CLI wrapper examples.
-- Agent integration templates.
-
+- 机器可读调用格式。
+- 可选 JSON schema。
+- CLI wrapper 示例。
+- Agent 集成模板。

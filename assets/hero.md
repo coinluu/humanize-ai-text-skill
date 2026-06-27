@@ -1,14 +1,14 @@
-# Humanize AI Text Skill
+# Humanize AI Text Skill｜AI 初稿真人化编辑 Skill
 
-Rewrite AI-generated Chinese text into natural, human-like, platform-ready content.
+一个 Agent 可调用的中文文本真人化编辑 Skill。
 
-Built for agents. No database. No backend. No user system.
+用于把 AI 生成的中文初稿改成更自然、更像真人表达、更符合平台场景的内容。
 
-Use it when an agent needs to:
+适合：
 
-- Diagnose AI-like tone.
-- Rewrite for Xiaohongshu, Douyin, WeChat, Moments, sales copy, or business documents.
-- Preserve protected facts.
-- Extract reference sample style patterns.
-- Keep high-risk content accurate and restrained.
-
+- AI 感诊断
+- 小红书、抖音口播、公众号、朋友圈、销售文案、商务文档改写
+- Protected Facts 保真
+- 参考样本风格提炼
+- 高风险内容安全检查
+- 防过度真人化
